@@ -12,6 +12,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 admin_id    | integer   | not null, foreign key (references users)
+completer_id| integer   | not null, foreign key (references users)
 label       | string    | not null, unique
 date        | datetime  | (to-do only)
 description | string    | default: [""]
@@ -32,8 +33,6 @@ username        | string    | not null, unique
 email           | string    | not null, unique
 picture         | blob      | default: [some_image]
 admin           | boolean   | not null
-amind_id        | integer   | not null
-xp              | integer   | not null
-level           | integer   | not null
+admin_id        | integer   | not null
 password_digest | string    | not null
 session_token   | string    | not null, unique
