@@ -19,8 +19,8 @@
 ![show-users]
 
 [quest-view]: ./wireframes/quest_view.png
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[show-users]: ./wireframes/show_users.png
-[new-quest]: ./wireframes/new_quest.png
-[invited-user]: ./wireframes/invited_user.png
+[new-user]: ./wireframes/new-user.png
+[new-session]: ./wireframes/new-session.png
+[show-users]: ./wireframes/show-users.png
+[new-quest]: ./wireframes/new-quest.png
+[invited-user]: ./wireframes/invited-user.png
