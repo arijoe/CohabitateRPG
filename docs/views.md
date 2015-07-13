@@ -1,9 +1,9 @@
 # View Wireframes
 
 ## Quest Show
-![quest-show]
+![quest-view]
 
 ## Sub-Views
 * *pending*
 
-[quest-show]: ./wireframes/quest_show.png
+[quest-view]: ./wireframes/quest_view.png
