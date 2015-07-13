@@ -1,4 +1,4 @@
-# Flux-capacitr
+# CohabitateRPG
 *pending*
 [Heroku link][heroku]
 
