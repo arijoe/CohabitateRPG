@@ -20,7 +20,7 @@
 * QuestForm (redirect if not admin)
 * ItemForm
 * UsersIndex
-* UserShow
+* UserForm (show/edit)
 * InviteUsersForm (if admin)
 
 ## Gems/Libraries

@@ -6,7 +6,6 @@
 ### Controllers
 
 ### Views
-* users/edit.html.erb
 
 ## Backbone
 ### Models
