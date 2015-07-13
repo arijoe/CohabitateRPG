@@ -6,6 +6,7 @@
 ### Controllers
 
 ### Views
+* users/edit.html.erb
 
 ## Backbone
 ### Models
@@ -18,5 +19,5 @@
 * *Add significant CSS and jquery formatting*
 
 ## Gems/Libraries
-* Javascript plug-ins to add animation to displaying list-item information,
+* Javascript plug-ins to add animation for displaying list-item information,
 possibly also for user profile and leader profile.

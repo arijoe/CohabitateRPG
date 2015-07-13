@@ -1,11 +1,10 @@
-# Phase 2: Daily Task Sub-Views, with individual item Sub-Views
+# Phase 2: Daily Task Sub-Views, with Individual Item Sub-Views
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::QuestsController (create, destroy, update, show)
-Api::ListsController (show, update, index)
+Api::ListsController (show, update)
 Api::ItemsController (create, destroy, show, update, index)
 
 ### Views
@@ -19,6 +18,7 @@ Api::ItemsController (create, destroy, show, update, index)
 ### Models
 * Quest (parses nested 'lists' and 'items' associations)
 * List (parses nested 'items' association)
+* Item
 
 ### Collections
 * Lists
@@ -26,9 +26,13 @@ Api::ItemsController (create, destroy, show, update, index)
 
 ### Views
 * QuestForm
-* QuestShow (composite view, contains ListsIndex subview)
-* ListsIndex (composite view, contains ListsIndexItem subviews)
-* ListsIndexItem (link to ItemShow)
+* QuestShow (composite view, contains subviews)
+* ListShow
+* QuestListItem
 * ItemShow
 
+## Util
+* CompisteView
+
 ## Gems/Libraries
+* serializeJSON

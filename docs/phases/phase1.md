@@ -4,25 +4,19 @@
 ### Models
 * User
 * Quest
-* Daily
-* Weekly
-* Monthly
-* To-Do
+* Lists
+* Items
 
 ### Controllers
-* UsersController (create, new)
+* UsersController (create, new, edit, index)
 * SessionsController (create, new, destroy)
-* QuestsController (create, new, show, destroy)
-* DailiesController (create, new, show, destroy)
-* WeekliesController (create, new, show, destroy)
-* MonthliesController (create, new, show, destroy)
-* ToDosController (create, new, show, destroy)
+* ApplicationController
+* Api::QuestsController (create, new, edit, destroy)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* quests/new.html.erb
-* quests/show.html.erb
+* quest/show.html.erb
 
 ## Backbone
 ### Models

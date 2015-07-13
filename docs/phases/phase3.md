@@ -5,12 +5,11 @@
 * Add admin privilege, protect create, update, and destroy functions.
 
 ### Controllers
-* Sync with admin privileges.
+* StaticPages (sync with admin privilege.
 
 ### Views
-* users/index.html.erb
-* user/show.html.erb
-* user/new/invite.html.erb
+* users/index.html.erb (only those in group)
+* user/new/.html.erb (render different view if invited/not admin)
 
 ## Backbone
 ### Models
@@ -18,6 +17,7 @@
 ### Collections
 
 ### Views
+* QuestForm (redirect if not admin)
 * ItemForm
 * UsersIndex
 * UserShow

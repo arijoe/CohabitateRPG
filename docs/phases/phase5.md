@@ -19,3 +19,4 @@ Api::Notifications
 
 ## Gems/Libraries
 * Google Calendar synchronization
+* Create mailers

@@ -32,6 +32,7 @@ username        | string    | not null, unique
 email           | string    | not null, unique
 picture         | blob      | default: [some_image]
 admin           | boolean   | not null
+amind_id        | integer   | not null
 xp              | integer   | not null
 level           | integer   | not null
 password_digest | string    | not null
