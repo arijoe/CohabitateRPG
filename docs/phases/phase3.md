@@ -21,6 +21,7 @@
 * ItemForm
 * UsersIndex
 * UserShow
+* InviteUsersForm (if admin)
 
 ## Gems/Libraries
 * Mailer for inviting new user, create new landing page for accepted invite

@@ -16,6 +16,7 @@ Api::Notifications
 ### Views
 * NotificationShow (new page, settings for notifications of upcoming tasks/
   calendar synching)
+* Pop-up tutorial with description of lists and functions
 
 ## Gems/Libraries
 * Google Calendar synchronization
