@@ -1,19 +1,22 @@
 <div class="session-links">
   <a class="logo" href="<%= root_url %>">COHABITATE</a>
-  <% if logged_in? %>
-    <form action="<%= session_url %>" method="POST">
-      <%= auth_token_input %>
-      <input type="hidden" name="_method" value="delete">
-      <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
-      | <button>Sign Out</button>
-    </form>
-  <% else %>
-    <a href="<%= new_session_url %>">Log In</a> | <a href="<%= new_user_url %>">Sign Up</a>
-  <% end %>
-  << (Make Login/Sign-In a form-view)
+
   <% if current_user && current_user.quest %>
-    <a href="<%= api_quest_url(current_user.quest) %>">View My Quest</a>
+
+    <a href="<%= api_quest_url(current_user.quest) %>">Play CohabitateRPG</a>
+
   <% else %>
-    <a href="<%= new_api_quest_url %>">Play CohabitateRPG</a>
+
+    <% if logged_in? %>
+      <form action="<%= session_url %>" method="POST">
+        <%= auth_token_input %>
+        <input type="hidden" name="_method" value="delete">
+        <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
+        | <button>Sign Out</button>
+      </form>
+    <% else %>
+      <a href="<%= new_user_url %>">Play CohabitateRPG</a>
+    <% end %>
+
   <% end %>
 </div>

@@ -3,6 +3,10 @@
 <form action="<%= users_url %>" method='POST'>
   <%= auth_token_input %>
   <%= render "shared/errors" %>
+
+  <div class="sign-in-redirect">Already a member? <a href="<%= new_session_url %>">Sign In!</a>
+  <br><br>
+
   <label>Email
     <input type="text" name="user[email]" value="<%= @user.email if @user %>">
   </label>
