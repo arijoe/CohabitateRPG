@@ -1,6 +1,5 @@
-<a class="logo" href="<%= root_url %>">COHABITATE</a>
-
 <div class="session-links">
+  <a class="logo" href="<%= root_url %>">COHABITATE</a>
   <% if logged_in? %>
     <form action="<%= session_url %>" method="POST">
       <%= auth_token_input %>
@@ -11,7 +10,7 @@
   <% else %>
     <a href="<%= new_session_url %>">Log In</a> | <a href="<%= new_user_url %>">Sign Up</a>
   <% end %>
-  << REFACTOR THIS
+  << (Make Login/Sign-In a form-view)
   <% if current_user && current_user.quest %>
     <a href="<%= api_quest_url(current_user.quest) %>">View My Quest</a>
   <% else %>
