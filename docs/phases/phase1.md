@@ -11,7 +11,7 @@
 * UsersController (create, new, edit, index)
 * SessionsController (create, new, destroy)
 * ApplicationController
-* Api::QuestsController (create, new, edit, destroy)
+* QuestsController (create, new, edit, destroy)
 
 ### Views
 * users/new.html.erb
