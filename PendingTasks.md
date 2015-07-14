@@ -5,6 +5,7 @@ necessarily unique across the users table.
 * Default leader_id to user.id if not invited
 
 ** Rails
+* refactor error rendering/login-logout link placement
 * redirect to quest show page upon login in models/user.rb
 * redirect to user edit page upon sign-up
 * root-to sample page show
