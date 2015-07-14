@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
+# Phase 1: User Authentication, Create Quest
 
 ## Rails
 ### Models

@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.is_leader = true
-    @user.leader_id = @user.id
 
     if @user.save
+      User.assign_leader_id(@user)
       login!(@user)
       # remember to edit later
       redirect_to user_url(@user)

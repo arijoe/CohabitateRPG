@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :is_leader, :leader_id, :password_digest, :session_token,
+  validates :email, :is_leader, :password_digest, :session_token,
       presence: true
   validates :email, uniqueness: true
   validates :password, {length: {minimum: 8, allow_nil: true}}
@@ -10,7 +10,16 @@ class User < ActiveRecord::Base
 
   # associations here
 
-  # model functions here
+  def self.assign_leader_id(user)
+    debugger
+    if user.is_leader
+      user.leader_id = user.id
+    else
+      #will set to invited person's id
+    end
+
+    nil
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
