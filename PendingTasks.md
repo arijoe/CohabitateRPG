@@ -7,3 +7,4 @@ necessarily unique across the users table.
 ** Rails
 * redirect to quest show page upon login in models/user.rb
 * redirect to user edit page upon sign-up
+* root-to sample page show

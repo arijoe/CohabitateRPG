@@ -5,7 +5,8 @@
 * Add admin privilege, protect create, update, and destroy functions.
 
 ### Controllers
-* StaticPages (sync with admin privilege.
+* UsersController(destroy)
+* StaticPages (sync with admin privilege).
 
 ### Views
 * users/index.html.erb (only those in group)
