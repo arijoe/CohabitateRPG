@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  # associations here
+  has_one: :quest,
+    class_name: "Quest",
+    foreign_key: :leader_id,
+    primary_key: :id
 
   def self.assign_leader_id(user)
     if user.is_leader
