@@ -8,7 +8,18 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_one: :quest,
+  has_many :roomies,
+    -> { where(is_leader: true)},
+    class_name: "User",
+    foreign_key: :leader_id,
+    primary_key: :id
+
+  belongs_to :leader,
+    class_name: "User",
+    foreign_key: :leader_id,
+    primary_key: :id
+
+  has_one :quest,
     class_name: "Quest",
     foreign_key: :leader_id,
     primary_key: :id
