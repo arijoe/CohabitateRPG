@@ -1,1 +1,8 @@
-<h2><%= @user.email %>
+<h2>
+  <form action="<%= session_url %>" method="POST">
+    <%= auth_token_input %>
+    <input type="hidden" name="_method" value="delete">
+    <%= current_user.email %>
+    | <button>Sign Out</button>
+  </form>
+</h2>
