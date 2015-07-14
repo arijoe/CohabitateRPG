@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "sessions#new"
+  root to: "static#front"
 
   resources :users,  only: [:new, :create, :show, :edit, :index, :destroy]
   resource :session, only: [:new, :create, :destroy]
