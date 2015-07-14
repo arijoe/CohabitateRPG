@@ -35,6 +35,18 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+  # Easier to read errors, obvs
+  gem 'better_errors'
+
+  # Easier to trace errors
+  gem 'binding_of_caller'
+
+  # Convenience for testing the console
+  gem 'pry-rails'
+
+  # Even easier to read errors, limit the backtrace
+  gem 'quiet_assets'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
