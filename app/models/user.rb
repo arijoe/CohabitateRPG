@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  validates: :email, :is_leader, :leader_id, :password_digest, :session_token,
+  validates :email, :is_leader, :leader_id, :password_digest, :session_token,
       presence: true
-  validates: :email, uniqueness: true
-  validates: :password, {length: {minimum: 8, allow_nil: true}}
+  validates :email, uniqueness: true
+  validates :password, {length: {minimum: 8, allow_nil: true}}
 
   attr_reader :password
 
