@@ -4,7 +4,7 @@
   <%= auth_token_input %>
   <%= render "shared/errors" %>
   <label>Email
-    <input type="text" name="user[email]">
+    <input type="text" name="user[email]" value="<%= @user.email if @user %>">
   </label>
     <br>
   <label>Password

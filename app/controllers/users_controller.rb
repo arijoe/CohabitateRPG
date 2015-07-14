@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     @user.is_leader = true
 
     if @user.save
-      User.assign_leader_id(@user)
       login!(@user)
       # remember to edit later
       redirect_to user_url(@user)
+      User.assign_leader_id(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

@@ -11,14 +11,14 @@ class User < ActiveRecord::Base
   # associations here
 
   def self.assign_leader_id(user)
-    debugger
     if user.is_leader
       user.leader_id = user.id
     else
+      nil
       #will set to invited person's id
     end
 
-    nil
+    user.save
   end
 
   def self.find_by_credentials(email, password)
