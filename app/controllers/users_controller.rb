@@ -1,3 +1,5 @@
+require 'byebug'
+
 class UsersController < ApplicationController
   before_action :require_logged_out, only: [:new, :create, :index]
   before_action :require_logged_in, only: [:show, :edit, :update, :destroy]
@@ -7,8 +9,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-
+    @user.is_leader = true
+    @user.leader_id = @user.id
 
     if @user.save
       login!(@user)
