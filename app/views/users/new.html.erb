@@ -2,6 +2,7 @@
 
 <form action="<%= users_url %>" method='POST'>
   <%= auth_token_input %>
+  <%= render "shared/errors" %>
   <label>Email
     <input type="text" name="user[email]">
   </label>
