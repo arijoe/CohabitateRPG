@@ -1,5 +1,3 @@
-require 'byebug'
-
 class UsersController < ApplicationController
   before_action :require_logged_out, only: [:new, :create, :index]
   before_action :require_logged_in, only: [:show, :edit, :update, :destroy]
