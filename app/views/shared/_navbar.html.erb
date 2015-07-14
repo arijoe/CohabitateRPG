@@ -1,6 +1,4 @@
-<div class="logo">
-  <a href="<%= root_url %>">COHABITATE</a>
-</div>
+<a class="logo" href="<%= root_url %>">COHABITATE</a>
 
 <div class="session-links">
   <% if logged_in? %>
@@ -13,4 +11,8 @@
   <% else %>
     <a href="<%= new_session_url %>">Log In</a> | <a href="<%= new_user_url %>">Sign Up</a>
   <% end %>
+  << REFACTOR THIS
+  <a href="<%= quest_show_url(@user.quest) %>">Play CohabitateRPG</a>
 </div>
+
+<img src="app/assets/images/drawf.png">
