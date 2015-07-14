@@ -12,7 +12,7 @@
     <form action="<%= session_url %>" method="POST">
       <%= auth_token_input %>
       <input type="hidden" name="_method" value="delete">
-      <a href="<%= user_url(current_user) %>"><%= current_user.username %></a>
+      <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
       | <button>Sign Out</button>
     </form>
   <% else %>

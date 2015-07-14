@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "sessions#new"
 
-  resources :users,  only: [:new, :create, :edit, :index, :destroy]
+  resources :users,  only: [:new, :create, :show, :edit, :index, :destroy]
   resource :session, only: [:new, :create, :destroy]
 
   # You can have the root of your site routed with "root"
