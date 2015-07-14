@@ -1,0 +1,15 @@
+<h1>Sign Up for CohabitateRPG!</h1>
+
+<form action="<%= users_url %>" method='POST'>
+  <%= auth_token_input %>
+  <label>Email
+    <input type="text" name="user[email]">
+  </label>
+    <br>
+  <label>Password
+    <input type="password" name="user[password]">
+  </label>
+    <br>
+
+  <input type="submit" value="Blue Yourself!">
+</form>
