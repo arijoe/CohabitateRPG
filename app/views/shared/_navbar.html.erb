@@ -12,7 +12,7 @@
     <a href="<%= new_session_url %>">Log In</a> | <a href="<%= new_user_url %>">Sign Up</a>
   <% end %>
   << REFACTOR THIS
-  <% if current_user.quest %>
+  <% if current_user && current_user.quest %>
     <a href="<%= api_quest_url(current_user.quest) %>">View My Quest</a>
   <% else %>
     <a href="<%= new_api_quest_url %>">Play CohabitateRPG</a>
