@@ -4,10 +4,10 @@ window.Cohabitate = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Cohabitate.Routers.Router({
+      $rootEl = #("main")
+      collection: new Cohabitate.Collections.quests();
+    });
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Cohabitate.initialize();
-});
