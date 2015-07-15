@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
   has_one :quest,
     class_name: "Quest",
+    #will need to create a join table and make this a user id
     foreign_key: :leader_id,
     primary_key: :id
 
