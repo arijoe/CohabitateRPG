@@ -21,8 +21,17 @@ class User < ActiveRecord::Base
 
   has_one :quest,
     class_name: "Quest",
-    #will need to create a join table and make this a user id
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_one :led_quest,
+    class_name: "Quest",
     foreign_key: :leader_id,
+    primary_key: :id
+
+  has_one :quest_membership,
+    class_name: "QuestMembership",
+    foreign_key: :user_id,
     primary_key: :id
 
   def self.assign_leader_id(user)

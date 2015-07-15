@@ -1,6 +1,6 @@
   class Api::QuestsController < ApplicationController
     def create
-      @quest = current_user.quests.new(quest_params)
+      @quest = current_user.led_quest.new(quest_params)
 
       if @quest.save
         render json: @quest
