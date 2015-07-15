@@ -37,6 +37,6 @@ class Api::QuestsController < ApplicationController
 
   private
   def quest_params
-    params.require(:quest).permit(:title)
+    params.require(:quest).permit(:title, member_ids: [])
   end
 end

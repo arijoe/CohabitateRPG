@@ -9,7 +9,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   show: function (id) {
-    
+    var showView = new Cohabitate.Views.
   },
 
   function swapView (view) {
