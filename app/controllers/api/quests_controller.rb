@@ -1,4 +1,3 @@
-
-  class QuestsController < ApiController
+  class Api::QuestsController < ApplicationController
 
   end
