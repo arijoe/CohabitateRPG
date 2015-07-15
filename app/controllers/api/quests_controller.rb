@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Api::QuestsController < ApplicationController
   def create
     @quest = current_user.led_quest.new(quest_params)
@@ -13,7 +11,6 @@ class Api::QuestsController < ApplicationController
 
   def show
     @quest = Quest.find(params[:id])
-    debugger
 
     if @quest
       render :show
@@ -42,4 +39,4 @@ class Api::QuestsController < ApplicationController
   def quest_params
     params.require(:quest).permit(:title)
   end
-  end
+end
