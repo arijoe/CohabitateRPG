@@ -3,7 +3,7 @@
 
   <% if current_user && current_user.quest %>
 
-  <a href="<%= api_quest_url(current_user.quest) %>">Play CohabitateRPG</a>
+  <a href="/#/quests/<%= current_user.quest.id %>">Play CohabitateRPG</a>
   <form action="<%= session_url %>" method="POST">
     <%= auth_token_input %>
     <input type="hidden" name="_method" value="delete">

@@ -4,7 +4,7 @@ Cohabitate.Collections.Quests = Backbone.Collection.extend ({
   url: "/api/quests",
 
   getOrFetch: function (id) {
-
+    
   }
 });
 

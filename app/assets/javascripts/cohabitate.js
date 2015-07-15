@@ -5,7 +5,7 @@ window.Cohabitate = {
   Routers: {},
   initialize: function() {
     new Cohabitate.Routers.Router({
-      $rootEl: ("#main"),
+      $rootEl: $("#main"),
       quests: Cohabitate.Collections.quests
     });
     Backbone.history.start();

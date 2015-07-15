@@ -5,17 +5,17 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   routes: {
-    "quests/id": "show"
+    "quests/:id": "show"
   },
 
   show: function (id) {
     var quest = this.collection.getOrFetch(id);
     var showView = new Cohabitate.Views.QuestShow({ model: quest });
     debugger
-    this._swapView(showview);
+    this._swapView(showView);
   },
 
-  function _swapView (view) {
+  _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
