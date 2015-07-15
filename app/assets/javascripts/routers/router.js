@@ -11,7 +11,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   show: function (id) {
     var quest = this.collection.getOrFetch(id);
     var showView = new Cohabitate.Views.QuestShow({ model: quest });
-    debugger
     this._swapView(showView);
   },
 

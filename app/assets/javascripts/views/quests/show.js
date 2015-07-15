@@ -5,6 +5,10 @@ Cohabitate.Views.QuestShow = Backbone.View.extend({
     // add listeners
   },
 
+  events: {
+    // add events
+  },
+
   render: function () {
     var content = this.template({ quest: this.model });
     this.$el.html(content);

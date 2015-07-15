@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :quests, only: [:new, :create, :show, :edit, :destroy]
+    resources :members, only: [:index, :create, :show]
   end
 
   # Example resource route with more complex sub-resources:
