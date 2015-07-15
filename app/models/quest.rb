@@ -9,5 +9,8 @@ class Quest < ActiveRecord::Base
   has_many :quest_memberships,
     class_name: "QuestMembership",
     foreign_key: :quest_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
+
+  has_many :members, through: :quest_memberships, source: :user
 end
