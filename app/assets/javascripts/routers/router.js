@@ -1,5 +1,5 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
-  initialize: function () {
+  initialize: function (options) {
     this.$rootEl = options.$rootEl,
     this.collection = options.quests
   },
@@ -9,6 +9,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   show: function (id) {
-    
+
   }
 });
