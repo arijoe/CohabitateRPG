@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "static_pages#front"
+  root to: "static_pages#diverter"
 
   resources :users,  only: [:new, :create, :show, :edit, :index, :destroy]
   resource :session, only: [:new, :create, :destroy]

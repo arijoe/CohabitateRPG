@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= render "static_pages/root" %>
+<% else %>
+  <%= render "static_pages/front" %>
+<% end %>
