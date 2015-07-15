@@ -11,19 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715154710) do
+ActiveRecord::Schema.define(version: 20150715183102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "quest_memberships", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "quest_id",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "quest_memberships", id: false, force: :cascade do |t|
+    t.integer "user_id",  null: false
+    t.integer "quest_id", null: false
   end
 
-  add_index "quest_memberships", ["user_id", "quest_id"], name: "index_quest_memberships_on_user_id_and_quest_id", using: :btree
+  add_index "quest_memberships", ["quest_id"], name: "index_quest_memberships_on_quest_id", using: :btree
+  add_index "quest_memberships", ["user_id"], name: "index_quest_memberships_on_user_id", using: :btree
 
   create_table "quests", force: :cascade do |t|
     t.string   "title",      null: false
