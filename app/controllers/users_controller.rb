@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login!(@user)
-      # remember to edit later
-      redirect_to user_url(@user)
+      redirect_to root_url
       User.assign_leader_id(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
