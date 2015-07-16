@@ -1,17 +1,27 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$rootEl = options.$rootEl,
-    this.collection = options.quests
+    this.model = options.quest
   },
 
   routes: {
-    "quests/:id": "show"
+    "quest": "show",
+    "quests/new": "create",
+    "quests/edit": "edit"
   },
 
-  show: function (id) {
-    var quest = this.collection.getOrFetch(id);
-    var showView = new Cohabitate.Views.QuestShow({ model: quest });
+  show: function () {
+    debugger
+    var showView = new Cohabitate.Views.QuestShow({ model: this.model });
     this._swapView(showView);
+  },
+
+  create: function () {
+
+  },
+
+  edit: function () {
+
   },
 
   _swapView: function (view) {

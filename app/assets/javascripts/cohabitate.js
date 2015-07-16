@@ -3,11 +3,14 @@ window.Cohabitate = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
+  initialize: function(questID) {
+    Cohabitate.Collections.quests.fetch();
+
     new Cohabitate.Routers.Router({
       $rootEl: $("#main"),
-      quests: Cohabitate.Collections.quests
+      quest: Cohabitate.Collections.quests.getOrFetch(questID)
     });
+
     Backbone.history.start();
   }
 };

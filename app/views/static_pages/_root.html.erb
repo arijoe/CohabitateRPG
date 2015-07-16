@@ -1,8 +1,21 @@
 <%= render "shared/navbar" %>
 <div class="app-container">
-  <div id="top-bar">I will have information</div>
+  <div id="top-bar">
+
+    <% if logged_in? %>
+      <form action="<%= session_url %>" method="POST">
+        <%= auth_token_input %>
+        <input type="hidden" name="_method" value="delete">
+        <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
+        | <button>Sign Out</button>
+      </form>
+    <% else %>
+      <a href="<%= new_user_url %>">Play CohabitateRPG</a>
+    <% end %>
+
+  </div>
   <div id="middle-bar">I too will have information</div>
   <div id="main"></div>
 </div>
 
-<script>$(Cohabitate.initialize);</script>
+<script>$(Cohabitate.initialize(<%= current_user.quest.id %>));</script>

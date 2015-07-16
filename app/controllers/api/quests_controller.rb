@@ -10,7 +10,7 @@ class Api::QuestsController < ApplicationController
   end
 
   def show
-    @quest = Quest.find(params[:id])
+    @quest = current_user.quest
 
     if @quest
       render :show
@@ -30,7 +30,7 @@ class Api::QuestsController < ApplicationController
   end
 
   def destroy
-    @quest = current_user.quests.find(params[:id])
+    @quest = current_user.quest
     @quest.destroy
     render json: {}
   end
