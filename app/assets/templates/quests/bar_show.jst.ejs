@@ -1,7 +1,7 @@
 <%= quest.escape('title') %>
 
 <ul>
-  <% quest.members().each( function { (member) %>
+  <% quest.members().each(function (member) { %>
     <li><%= member.escape('email') %></li>
   <% }) %>
 </ul>

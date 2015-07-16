@@ -1,7 +1,7 @@
 <h2><%= quest.escape('title') %></h2>
 
 <ul>
-  <% quest.lists().each( function { (list) %>
-    <li><%= list.escape('title') %></li>
+  <% quest.lists().each(function (list) { %>
+    <li><%= list.escape('type') %></li>
   <% }) %>
 </ul>
