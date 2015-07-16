@@ -1,5 +1,5 @@
 Cohabitate.Models.Quest = Backbone.Model.extend ({
-  urlRoot: "/api/quest",
+  url: "/api/quest",
 
   parse: function (response) {
     if (response.members) {

@@ -5,7 +5,7 @@
 
     <% if current_user.quest %>
 
-      <form action="<%= api_quest_url %>" method="POST">
+      <form action="/#/quest" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="get">
         <button>Play!</button>
@@ -13,7 +13,7 @@
 
     <% else %>
 
-      <form action="<%= new_api_quest_url %>" method="POST">
+      <form action="/#/quest/new" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="get">
         <button>Play!</button>
