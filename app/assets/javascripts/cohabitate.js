@@ -7,8 +7,9 @@ window.Cohabitate = {
     Cohabitate.Collections.quests.fetch();
 
     new Cohabitate.Routers.Router({
-      $gameEl: $("#game"),
-      quest: Cohabitate.Collections.quests.getOrFetch(options.questID)
+      $rootEl: $("#app-container"),
+      quest: Cohabitate.Collections.quests.getOrFetch(options.questID),
+      current_user: options.current_user
     });
 
     Backbone.history.start();

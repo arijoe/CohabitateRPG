@@ -1,21 +1,22 @@
+<div id="top-bar">
+
+  <% if logged_in? %>
+    <form action="<%= session_url %>" method="POST">
+      <%= auth_token_input %>
+      <input type="hidden" name="_method" value="delete">
+      <button>Sign Out</button>
+    </form>
+  <% else %>
+    <a href="<%= new_user_url %>">Play CohabitateRPG</a>
+  <% end %>
+
+</div>
+
 <div class="app-container">
-  <div id="top-bar">
-
-    <% if logged_in? %>
-      <form action="<%= session_url %>" method="POST">
-        <%= auth_token_input %>
-        <input type="hidden" name="_method" value="delete">
-        <button>Sign Out</button>
-      </form>
-    <% else %>
-      <a href="<%= new_user_url %>">Play CohabitateRPG</a>
-    <% end %>
-
-  </div>
   <div id="game-bar">
     <a href="<%= user_url(current_user) %>"><%= current_user.email %>'s Profile</a>
   </div>
-  <div id="game"></div>
+  <div id="game-main"></div>
 </div>
 
 <script>$(Cohabitate.initialize(
