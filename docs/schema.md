@@ -4,7 +4,7 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-leader_id   | integer   | not null, foreign key (references users)
+quest_id    | integer   | not null, foreign key (references quests)
 type        | string    | not null, restricted_to (daily, weekly, monthly, todo)
 
 ## items
@@ -13,6 +13,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 leader_id   | integer   | not null, foreign key (references users)
 completer_id| integer   | not null, foreign key (references users)
+list_id     | integer   | not null, foreign key (references lists)
 label       | string    | not null, unique
 duedate     | datetime  | (to-do only)
 description | text      | default: [""]
