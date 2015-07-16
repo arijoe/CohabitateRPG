@@ -16,7 +16,12 @@ class Quest < ActiveRecord::Base
 
   has_many :members, through: :quest_memberships, source: :user
 
-  # def add_lists
-  #   self.
-  # end
+  def add_lists
+    id = self.id
+
+    Daily.make(id)
+    Weekly.make(id)
+    Monthly.make(id)
+    Todo.make(id)
+  end
 end
