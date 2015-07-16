@@ -1,4 +1,4 @@
-Cohabitate.Views.QuestShow = Backbone.View.extend({
+Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   gameTemplate: JST['quests/main_show'],
 
   barTemplate: JST['quests/bar_show'],
