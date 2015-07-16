@@ -11,7 +11,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   show: function () {
-    debugger
     var showView = new Cohabitate.Views.QuestShow({ model: this.model });
     this._swapView(showView);
   },

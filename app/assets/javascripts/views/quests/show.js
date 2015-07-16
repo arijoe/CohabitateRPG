@@ -2,7 +2,7 @@ Cohabitate.Views.QuestShow = Backbone.View.extend({
   template: JST['quests/show'],
 
   initialize: function () {
-    // add listeners
+    this.listenTo(this.model, "sync", this.render);
   },
 
   events: {
