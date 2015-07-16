@@ -3,6 +3,7 @@ class Api::QuestsController < ApplicationController
 
   def create
     @quest = current_user.led_quest.new(quest_params)
+    @quest.add_lists
 
     if @quest.save
       render json: @quest
@@ -32,7 +33,7 @@ class Api::QuestsController < ApplicationController
   end
 
   def destroy
-    @quest = current_user.quest
+    @quest = current_quest
     @quest.destroy
     render json: {}
   end

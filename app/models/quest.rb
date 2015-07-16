@@ -15,4 +15,8 @@ class Quest < ActiveRecord::Base
   has_many :lists, dependent: :destroy
 
   has_many :members, through: :quest_memberships, source: :user
+
+  # def add_lists
+  #   self.
+  # end
 end

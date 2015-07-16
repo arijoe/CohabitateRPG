@@ -1,39 +1,29 @@
 class Api::ListsController < ApplicationController
-  before_action :require_leader, only: [:create, :edit, :update, :destroy]
+  before_action :require_leader
 
   def create
-    @list = current_user.led_quest.new(quest_params)
+    @list = current_quest.new(list_params)
 
-    if @quest.save
-      render json: @quest
+    if @list.save
+      render json: @list
     else
-      render json: @quest.errors.full_messages, status: :unprocessable_entity
+      render json: @list.errors.full_messages, status: :unprocessable_entity
     end
   end
 
-  def show
-    @quest = current_user.quest
+  def update
+    @list = current_quest.lists.find(params[:id])
 
-    if @quest
-      render :show
+    if @list.save
+      render json: @list
     else
-      render json: ["None such quest, compadre."], status: 404
-    end
-  end
-
-  def edit
-    @quest = Quest.find(params[:id])
-
-    if @quest.save
-      render json: @quest
-    else
-      render json: @quest.errors.full_messages, status: :unprocessable_entity
+      render json: @list.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @quest = current_user.quest
-    @quest.destroy
+    @list = current_quest.lists.find(params[:id])
+    @list.destroy
     render json: {}
   end
 

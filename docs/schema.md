@@ -5,7 +5,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 quest_id    | integer   | not null, foreign key (references quests)
-type        | string    | not null, restricted_to (daily, weekly, monthly, todo)
+list_type   | string    | not null, restricted_to (daily, weekly, monthly, todo)
 
 ## items
 column name | data type | details

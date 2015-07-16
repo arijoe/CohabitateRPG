@@ -3,4 +3,22 @@ class List < ActiveRecord::Base
 
   belongs_to :quest
   has_one :leader, through: :quest, source: :leader
+
+
+end
+
+class Daily < List
+
+end
+
+class Weekly < List
+
+end
+
+class Monthly < List
+
+end
+
+class Todo < List
+
 end
