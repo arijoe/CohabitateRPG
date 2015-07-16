@@ -30,4 +30,8 @@ class ApplicationController < ActionController::Base
   def require_logged_out
     redirect_to user_url(current_user) if logged_in?
   end
+
+  def require_leader
+    render json: ["Only your quest leader can do that."], status: :unauthorized
+  end
 end
