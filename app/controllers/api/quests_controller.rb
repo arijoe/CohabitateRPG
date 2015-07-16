@@ -1,4 +1,6 @@
 class Api::QuestsController < ApplicationController
+  before_action :require_logged_in
+
   def create
     @quest = current_user.led_quest.new(quest_params)
 
@@ -10,7 +12,7 @@ class Api::QuestsController < ApplicationController
   end
 
   def show
-    @quest = current_user.quest
+    @quest = current_quest
 
     if @quest
       render :show

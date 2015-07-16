@@ -2,7 +2,7 @@ class Api::ListsController < ApplicationController
   before_action :require_leader, only: [:create, :edit, :update, :destroy]
 
   def create
-    @quest = current_user.led_quest.new(quest_params)
+    @list = current_user.led_quest.new(quest_params)
 
     if @quest.save
       render json: @quest
@@ -38,7 +38,7 @@ class Api::ListsController < ApplicationController
   end
 
   private
-  def quest_params
-    params.require(:quest).permit(:title, member_ids: [])
+  def lists_params
+    params.require(:list).permit(:title, :quest_id)
   end
 end
