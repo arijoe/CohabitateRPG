@@ -1,3 +1,3 @@
-Cohabitate.Models.Member = Backbone.Collection.extend ({
+Cohabitate.Models.Member = Backbone.Model.extend ({
   urlRoot: '/api/members'
 });
