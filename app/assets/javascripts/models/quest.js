@@ -20,7 +20,7 @@ Cohabitate.Models.Quest = Backbone.Model.extend ({
       this._members = new Cohabitate.Collections.Members([], { quest: this });
     }
     return this._members;
-  }.
+  },
 
   lists: function () {
     if (!this._lists) {

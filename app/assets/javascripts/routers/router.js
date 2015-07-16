@@ -1,7 +1,6 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$gameEl = options.$gameEl,
-    this.$gameBar = options.$gameBar,
     this.model = options.quest
   },
 

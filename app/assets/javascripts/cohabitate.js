@@ -8,7 +8,6 @@ window.Cohabitate = {
 
     new Cohabitate.Routers.Router({
       $gameEl: $("#game"),
-      $gameBar: $("#game-bar"),
       quest: Cohabitate.Collections.quests.getOrFetch(options.questID)
     });
 
