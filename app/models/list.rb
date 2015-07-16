@@ -4,11 +4,12 @@ class List < ActiveRecord::Base
   belongs_to :quest
   has_one :leader, through: :quest, source: :leader
 
-  def self.make(quest_id)
-    self.class.create!(
-      type: self.class.to_s,
-      quest_id: quest_id
-    )
+  def self.make!(quest_id)
+    classes = [Daily, Weekly, Monthly, Todo]
+
+    classes.each do |sub|
+      sub.create!(quest_id: quest_id)
+    end
   end
 end
 

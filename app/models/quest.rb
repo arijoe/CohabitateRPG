@@ -1,6 +1,8 @@
 class Quest < ActiveRecord::Base
   validates :title, :leader_id, presence: true
 
+  after_create :add_lists
+
   belongs_to :leader,
     class_name: "User",
     foreign_key: :leader_id,
@@ -17,11 +19,6 @@ class Quest < ActiveRecord::Base
   has_many :members, through: :quest_memberships, source: :user
 
   def add_lists
-    id = self.id
-
-    Daily.make(id)
-    Weekly.make(id)
-    Monthly.make(id)
-    Todo.make(id)
+    List.make!(id)
   end
 end
