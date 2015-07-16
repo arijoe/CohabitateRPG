@@ -1,10 +1,12 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
-    this.$rootEl = options.$rootEl,
+    this.$gameEl = options.$gameEl,
+    this.$gameBar = options.$gameBar,
     this.model = options.quest
   },
 
   routes: {
+    "": "show",
     "quest": "show",
     "quests/new": "create",
     "quests/edit": "edit"
@@ -26,6 +28,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$gameEl.html(view.render().$el);
   }
 });

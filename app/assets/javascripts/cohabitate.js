@@ -7,7 +7,8 @@ window.Cohabitate = {
     Cohabitate.Collections.quests.fetch();
 
     new Cohabitate.Routers.Router({
-      $rootEl: $("#main"),
+      $gameEl: $("#game"),
+      $gameBar: $("#game-bar"),
       quest: Cohabitate.Collections.quests.getOrFetch(questID)
     });
 
