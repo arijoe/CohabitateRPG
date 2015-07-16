@@ -7,6 +7,11 @@ Cohabitate.Models.Quest = Backbone.Model.extend ({
       delete response.members;
     };
 
+    if (response.lists) {
+      this.lists().set(response.lists);
+      delete response.lists;
+    }
+
     return response;
   },
 
@@ -15,5 +20,13 @@ Cohabitate.Models.Quest = Backbone.Model.extend ({
       this._members = new Cohabitate.Collections.Members([], { quest: this });
     }
     return this._members;
+  }.
+
+  lists: function () {
+    if (!this._lists) {
+      this._lists = new Cohabitate.Collections.Lists([], { quest: this });
+    }
+
+    return this._lists;
   }
 })
