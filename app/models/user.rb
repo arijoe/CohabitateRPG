@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :roomies,
-    -> { where(is_leader: true)},
+  has_many :followers,
     class_name: "User",
     foreign_key: :leader_id,
     primary_key: :id
@@ -33,6 +32,10 @@ class User < ActiveRecord::Base
     class_name: "QuestMembership",
     foreign_key: :user_id,
     primary_key: :id
+
+  has_many :roomies, through: :quest, source: :members
+
+  has_many :lists, through: :led_quest, source: :lists
 
   def self.assign_leader_id(user)
     if user.is_leader

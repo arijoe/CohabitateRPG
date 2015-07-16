@@ -12,5 +12,7 @@ class Quest < ActiveRecord::Base
     primary_key: :id,
     dependent: :destroy
 
+  has_many :lists, dependent: :destroy
+
   has_many :members, through: :quest_memberships, source: :user
 end
