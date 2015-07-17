@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   root to: "static_pages#diverter"
 
-  resources :users,  only: [:new, :create, :show, :edit, :index, :destroy]
-  resource :session, only: [:new, :create, :destroy]
-
   namespace :api, defaults: { format: :json } do
+    resources :users,  only: [:new, :create, :show, :edit, :index, :destroy]
+    resource :session, only: [:show, :create, :destroy]
     resource :quest, only: [:new, :create, :show, :edit, :destroy]
     resources :members, only: [:index, :create, :show]
     resources :lists, only: [:create, :update, :destroy]
