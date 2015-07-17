@@ -2,7 +2,8 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.model = options.quest;
-    this.current_user = options.current_user
+    this.collection = new Cohabitate.Collections.Users();
+    this.collection.fetch();
   },
 
   routes: {
