@@ -9,5 +9,5 @@
 <% end %>
 
 <script>$(Cohabitate.initialize({
-  questID: <%= current_user.quest ? current_user.quest.id : nil %>
+  questID: <%= current_user && current_user.quest ?  current_user.quest.id : nil %>
 }));</script>
