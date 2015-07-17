@@ -13,7 +13,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     "quests/new": "questCreate",
     "quests/edit": "questEdit",
     "users/:id": "userShow",
-    "session/mew": "signIn"
+    "session/new": "signIn"
   },
 
   userIndex: function(){
