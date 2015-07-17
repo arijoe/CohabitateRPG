@@ -1,7 +1,7 @@
 Cohabitate.Views.Header = Backbone.View.extend({
 
   initialize: function(options){
-    this.listenTo(BackboneAuthDemo.currentUser, "signIn signOut", this.render);
+    this.listenTo(Cohabitate.currentUser, "signIn signOut", this.render);
     this.render();
   },
 

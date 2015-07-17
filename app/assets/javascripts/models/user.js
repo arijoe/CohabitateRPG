@@ -11,7 +11,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
   }
 });
 
-Cohabitate.Models.CurrentUser = BackboneAuthDemo.Models.User.extend({
+Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
 
   url: "/api/session",
 

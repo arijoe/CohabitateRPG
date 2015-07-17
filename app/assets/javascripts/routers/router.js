@@ -8,7 +8,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
   routes: {
     "": "questShow",
-    "users": "userIndex"
+    "users": "userIndex",
     "quest": "questShow",
     "users/new": "userNew",
     "quests/new": "questCreate",

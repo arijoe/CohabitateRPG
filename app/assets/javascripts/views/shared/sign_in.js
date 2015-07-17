@@ -1,4 +1,4 @@
-BackboneAuthDemo.Views.SignIn = Backbone.View.extend({
+Cohabitate.Views.SignIn = Backbone.View.extend({
 
   initialize: function(options){
     this.callback = options.callback;
