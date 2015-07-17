@@ -114,22 +114,30 @@ navbar .logo:active {
   color: #32cd32;
 }
 
-.session-links {
+.right-links {
   float: right;
 }
 
-.session-links a {
+.right-links a {
   float: left;
   padding: 8px;
   color: #555;
   text-decoration: none;
 }
 
-.session-links a:hover {
+.session-links a {
+  float: left;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.right-links a:hover {
   color: #32cd32;
 }
 
-.session-links a:active {
+.right-links a:active {
   color: #888;
 }
 

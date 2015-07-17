@@ -1,4 +1,4 @@
-<h1><a class="logo" href="#">COHABITATE</a></h1>
+<h1><a class="logo" href="/">COHABITATE</a></h1>
 
 <% if(Cohabitate.currentUser.isSignedIn()) { %>
 
@@ -8,9 +8,15 @@
 
 <% } else { %>
 
-  <span class="session-links">
-    <a href="#users/new">Sign Up</a>
-    <a href="#session/new">Sign In</a>
-  </span>
+<span class="right-links">
+    <a href="#">How it Works</a>
+    <a href="#">Blog</a>
+    <a href="#">Guest Login</a>
+    <a href="#">Press</a>
+    <span class="session-links">
+      <a href="#users/new">Sign Up</a>
+      <a href="#session/new">Sign In</a>
+    </span>
+</span>
 
 <% } %>
