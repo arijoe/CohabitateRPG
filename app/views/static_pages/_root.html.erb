@@ -19,7 +19,7 @@
   <div id="game-main"></div>
 </div>
 
-<script>$(Cohabitate.initialize(
-  "<%= current_user %>",
-  <%= current_user.quest ? current_user.quest.id : nil %>
-));</script>
+<script>$(Cohabitate.initialize({
+  userID: <%= current_user.id %>,
+  questID: <%= current_user.quest ? current_user.quest.id : nil %>
+}));</script>
