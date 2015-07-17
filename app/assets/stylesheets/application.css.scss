@@ -192,10 +192,10 @@ p {
 footer {
   background: #555;
   color: #b5bbbb;
-  text-align: center;
+  text-align: right;
   width: 100%;
   position: absolute;
-  bottom: 5px;
+  top: 1020px;
   margin: auto;
   padding: 2px;
   font-size: 14px;
@@ -204,7 +204,9 @@ footer {
 
 #spooky {
   float: left;
+  margin: 5px;
   margin-left: 20px;
+  transition: color 2s;
 }
 
 #spooky:hover {
@@ -214,12 +216,11 @@ footer {
 #links {
   float: right;
   position: relative;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 #link {
-  float: left;
-  margin-right: 10px;
+  margin: 5px;
 }
 
 #link:hover {

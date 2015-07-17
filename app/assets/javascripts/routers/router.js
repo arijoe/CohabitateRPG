@@ -1,14 +1,12 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.model = options.quest;
     this.collection = new Cohabitate.Collections.Users();
     this.collection.fetch();
   },
 
   routes: {
-    "": "questShow",
-    "users": "userIndex",
+    "": "userIndex",
     "quest": "questShow",
     "users/new": "userNew",
     "quests/new": "questCreate",
@@ -83,7 +81,9 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-    var showView = new Cohabitate.Views.QuestShow({ model: this.model });
+    // if (!this._requireSignedIn(callback)) { return; }
+
+    var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
     this._swapView(showView);
   },
 

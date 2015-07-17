@@ -4,8 +4,8 @@ window.Cohabitate = {
   Views: {},
   Routers: {},
   initialize: function(options) {
-    Cohabitate.Collections.quests.fetch();
-    if (options.questID) {
+    if (options.questID !== 0) {
+      Cohabitate.Collections.quests.fetch();
       this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
     };
 
@@ -14,8 +14,7 @@ window.Cohabitate = {
 
     this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
     this.router = new Cohabitate.Routers.Router({
-      $rootEl: $("#app-container"),
-      quest: this.currentQuest
+      $rootEl: $("#app-container")
     });
 
     Backbone.history.start();
