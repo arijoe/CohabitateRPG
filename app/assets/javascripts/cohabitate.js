@@ -8,11 +8,14 @@ window.Cohabitate = {
     if (options.questID) {
       this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
     };
-    
-    new Cohabitate.Routers.Router({
+
+    // this.currentUser stuff
+    // this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
+
+
+    this.router = new Cohabitate.Routers.Router({
       $rootEl: $("#app-container"),
       quest: this.currentQuest
-      // current_user: Cohabitate.Collections.currentUsers.getOrFetch(options.current_userID)
     });
 
     Backbone.history.start();
