@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   before_action :require_logged_out, only: [:new, :create, :index]
   before_action :require_logged_in, only: [:show, :edit, :update, :destroy]
 
@@ -7,24 +7,23 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.is_leader = true
 
     if @user.save
-      login!(@user)
-      redirect_to root_url
-      User.assign_leader_id(@user)
+      sign_in!(@user)
+      render :show
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render :new
+      render json: @user.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def index
+    @users = User.all
+    render :index
   end
 
   def show
     @user = User.find(params[:id])
-    user_url(@user)
+    render :show
   end
 
   def edit
