@@ -82,7 +82,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-    // if (!this._requireSignedIn(callback)) { return; }
 
     var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
     this._swapView(showView, this.$gameEl);

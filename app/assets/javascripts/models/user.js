@@ -23,6 +23,27 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
     return !this.isNew();
   },
 
+  // parse: function (response) {
+  //   if (response.members) {
+  //     this.members().set(response.members);
+  //     delete response.members;
+  //   };
+  //
+  //   if (response.lists) {
+  //     this.lists().set(response.lists);
+  //     delete response.lists;
+  //   }
+  //
+  //   return response;
+  // },
+  //
+  // members: function () {
+  //   if (!this._members) {
+  //     this._members = new Cohabitate.Collections.Members([], { quest: this });
+  //   }
+  //   return this._members;
+  // },
+
   signIn: function(options){
     var model = this;
     var credentials = {
@@ -36,6 +57,8 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
       data: credentials,
       dataType: "json",
       success: function(data){
+        debugger
+        data = model.parse(data);
         model.set(data);
         options.success && options.success();
       },
@@ -62,10 +85,8 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signIn");
-      console.log("currentUser is signed in!", this);
     } else {
       this.trigger("signOut");
-      console.log("currentUser is signed out!", this);
     }
   }
 

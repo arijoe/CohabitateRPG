@@ -74,7 +74,7 @@ body {
   position: relative;
   color: #000;
   background: #f2ffff;
-  border: 1px solid #32cd32;
+  border: 1px solid #555;
   width: 98%;
   display: block;
   margin: 5px auto;
@@ -91,8 +91,9 @@ button {
 
 /*TOP BAR*/
 
-navbar {
+.third #top-bar {
   position: relative;
+  color: white;
 }
 
 navbar .logo {
@@ -145,6 +146,7 @@ navbar .logo:active {
 
 #game-bar {
   min-height: 135px;
+  border: 1px solid #888;
 }
 
 .profile-display {
@@ -152,7 +154,7 @@ navbar .logo:active {
   height: 125px;
   width: 125px;
   margin: 5px 35px 5px 5px;
-  outline: 1px solid #888;
+  outline: 1px solid #32cd32;
 }
 
 .quest-info {
@@ -186,7 +188,7 @@ navbar .logo:active {
   float: left;
   padding: 10px;
   margin: 5px 5px;
-  border: 1px solid #888;
+  border: 1px solid #32cd32;
   background: #fff;
   min-height: 320px;
   min-width: 45px;
@@ -197,8 +199,6 @@ navbar .logo:active {
   font-size: 28px;
   color: #555;
 }
-
-
 
 /*SPLASH PAGE*/
 
@@ -218,7 +218,7 @@ footer {
   text-align: right;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: 800px;
   margin: auto;
   padding: 2px;
   font-size: 14px;
