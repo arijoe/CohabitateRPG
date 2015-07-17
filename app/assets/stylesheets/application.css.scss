@@ -57,6 +57,8 @@ img {
 
 /*STYLES*/
 
+/*CONSISTENT ELEMENTS*/
+
 html {
   background-image: url('cabin.png');
   background-position: top;
@@ -68,35 +70,26 @@ body {
   font-weight: 300;
 }
 
-navbar {
-  color: #000;
-  background: #f2ffff;
-  border: 1px solid #888;
-  width: 98%;
-  display: block;
-  margin: 5px auto;
-  border-radius: 5px;
-}
-
-#game-bar {
+.third {
   position: relative;
   color: #000;
   background: #f2ffff;
+  border: 1px solid #888;
   width: 98%;
   display: block;
   margin: 5px auto;
   border-radius: 5px;
-  border: 1px solid #888;
-  min-height: 135px;
 }
 
 button {
-  padding: 10px;
-  background: white;
-  font-size: 16px;
+  padding: 5px;
+  background: #fff;
+  font-size: 14px;
   border-radius: 5px;
   margin: 3px;
 }
+
+/*TOP BAR*/
 
 navbar .logo {
   padding: 10px;
@@ -128,6 +121,12 @@ navbar .logo:hover {
   border: 1px solid #888;
 }
 
+/*MIDDLE BAR*/
+
+#game-bar {
+  min-height: 135px;
+}
+
 .profile-display {
   float: left;
   height: 125px;
@@ -155,6 +154,33 @@ navbar .logo:hover {
 .quest-member:hover {
   color: firebrick;
 }
+
+/*LIST VIEW*/
+
+.lists {
+  margin: 0 auto;
+  width: calc(100% - 10px);
+}
+
+.list {
+  float: left;
+  padding: 10px;
+  margin: 5px 5px;
+  border: 1px solid #888;
+  background: #fff;
+  min-height: 150px;
+  min-width: 45px;
+  width: 20%;
+}
+
+#list-type {
+  font-size: 28px;
+  color: #555;
+}
+
+
+
+/*SPLASH PAGE*/
 
 p {
   background: #f2ffff;

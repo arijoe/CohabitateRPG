@@ -1,5 +1,7 @@
-<ul>
+<ul class="lists group">
   <% quest.lists().each(function (list) { %>
-    <li><%= list.escape('type') %></li>
+    <ul class="list">
+    <li id="list-type"><%= list.escape('type') %></li>
+    </ul>
   <% }) %>
 </ul>
