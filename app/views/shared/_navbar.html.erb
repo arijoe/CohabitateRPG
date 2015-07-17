@@ -1,4 +1,4 @@
-<div class="session-links">
+<navbar class="session-links group">
 
 
   <% if current_user %>
@@ -14,7 +14,7 @@
       <form action="<%= session_url %>" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="delete">
-          <button class="sign-out'button">Sign Out</button>
+          <button class="session-button">Sign Out</button>
       </form>
 
     <% else %>
@@ -22,13 +22,13 @@
       <form action="/#/quest/new" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="get">
-        <button class="play-button">Play!</button>
+        <button class="session-button">Play!</button>
       </form>
 
       <form action="<%= session_url %>" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="delete">
-          <button class="sign-out'button">Sign Out</button>
+          <button class="session-button">Sign Out</button>
       </form>
 
   <% end %>
@@ -41,8 +41,8 @@
     <form action="<%= new_user_url %>" method="POST">
       <%= auth_token_input %>
       <input type="hidden" name="_method" value="get">
-      <button class="play-button">Play!</button>
+      <button class="session-button">Play!</button>
     </form>
 
   <% end %>
-</div>
+</navbar>

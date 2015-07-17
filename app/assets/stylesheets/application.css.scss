@@ -16,13 +16,15 @@
 
 /* RESET */
 
-html, body, div, ul, li, h1, h2, img, button {
+html, body, div, navbar, ul, li, h1, h2, img, button {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
   font: inherit;
   color: inherit;
   text-align: inherit;
+  text-decoration: none;
   vertical-align: inherit;
   background: transparent;
 }
@@ -58,12 +60,115 @@ img {
 html {
   background-image: url('cabin.png');
   background-position: top;
-  background-size: cover;
+  background-width: 100%;
 }
 
 body {
   font-family: sans-serif;
-  background-image: url('cabin.png');
-  background-position: top;
-  background-size: cover;
+  font-weight: 300;
+}
+
+navbar {
+  color: #000;
+  background: #f2ffff;
+  border: 1px solid #888;
+  width: 98%;
+  display: block;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+
+#game-bar {
+  position: relative;
+  color: #000;
+  background: #f2ffff;
+  width: 98%;
+  display: block;
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 1px solid #888;
+  min-height: 135px;
+}
+
+button {
+  padding: 10px;
+  background: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+navbar .logo {
+  padding: 10px;
+  text-decoration: none;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: #5f9ea0;
+  float: left;
+}
+
+navbar .logo:hover {
+  color: #444;
+}
+
+.session-links button:hover {
+  background: #f2ffff;
+  border: 1px solid #c32148;
+  color: #c32148;
+}
+
+.profile-button {
+  float: left;
+  border: 1px solid #888;
+}
+
+.session-button {
+  float: right;
+  border: 1px solid #888;
+}
+
+.profile-display {
+  float: left;
+  height: 125px;
+  width: 125px;
+  margin: 5px 35px 5px 5px;
+  outline: 1px solid #888;
+}
+
+.quest-info {
+  float: left;
+  margin-left: 35px;
+}
+
+.quest-name {
+  float: left;
+  position: absolute;
+  bottom: 5px;
+}
+
+.quest-members {
+  float: right;
+  margin: 15px;
+}
+
+.quest-member:hover {
+  color: firebrick;
+}
+
+p {
+  background: #f2ffff;
+  height: auto;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+footer {
+  background: #555;
+  color: #b5bbbb;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  margin: auto;
 }

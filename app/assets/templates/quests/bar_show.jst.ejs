@@ -1,7 +1,12 @@
-<%= quest.escape('title') %>
+<container class="profile-display group"></container>
 
-<ul>
+<container class="quest-info">
+  <div class="quest-name"><%= quest.escape('title') %></div>
+
+</container>
+
+<ul class="quest-members group">
   <% quest.members().each(function (member) { %>
-    <li><%= member.escape('email') %></li>
+    <li class="quest-member"><%= member.escape('email') %></li>
   <% }) %>
 </ul>
