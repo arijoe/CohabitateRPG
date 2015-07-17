@@ -52,7 +52,6 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
       data: credentials,
       dataType: "json",
       success: function(data){
-        debugger
         data = model.parse(data);
         model.set(data);
         options.success && options.success();
