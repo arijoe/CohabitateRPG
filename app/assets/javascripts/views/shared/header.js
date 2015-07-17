@@ -12,8 +12,8 @@ Cohabitate.Views.Header = Backbone.View.extend({
   template: JST['shared/header'],
 
   render: function(){
-    var html = this.template({ currentUser: Cohabitate.currentUser });
-    this.$el.html(html);
+    var content = this.template({ currentUser: Cohabitate.currentUser });
+    this.$el.append(content);
 
     return this;
   },
