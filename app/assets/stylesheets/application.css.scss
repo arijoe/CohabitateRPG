@@ -197,4 +197,32 @@ footer {
   position: absolute;
   bottom: 5px;
   margin: auto;
+  padding: 2px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#spooky {
+  float: left;
+  margin-left: 20px;
+}
+
+#spooky:hover {
+  color: white;
+}
+
+#links {
+  float: right;
+  position: relative;
+  margin-right: 10px;
+}
+
+#link {
+  float: left;
+  margin-right: 10px;
+}
+
+#link:hover {
+  color: black;
+  cursor: pointer;
 }
