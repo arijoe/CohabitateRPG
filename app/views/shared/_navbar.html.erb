@@ -1,14 +1,20 @@
 <div class="session-links">
-  <a class="logo" href="<%= root_url %>">COHABITATE</a>
+
 
   <% if current_user %>
 
     <% if current_user.quest %>
 
-      <form action="/#/quest" method="POST">
+      <form action="<%= user_url(current_user) %>" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="get">
-        <button>Play!</button>
+        <button class="profile-button">My Profile</button>
+      </form>
+
+      <form action="<%= session_url %>" method="POST">
+        <%= auth_token_input %>
+        <input type="hidden" name="_method" value="delete">
+          <button class="sign-out'button">Sign Out</button>
       </form>
 
     <% else %>
@@ -16,7 +22,13 @@
       <form action="/#/quest/new" method="POST">
         <%= auth_token_input %>
         <input type="hidden" name="_method" value="get">
-        <button>Play!</button>
+        <button class="play-button">Play!</button>
+      </form>
+
+      <form action="<%= session_url %>" method="POST">
+        <%= auth_token_input %>
+        <input type="hidden" name="_method" value="delete">
+          <button class="sign-out'button">Sign Out</button>
       </form>
 
   <% end %>
@@ -24,7 +36,13 @@
 
   <% else %>
 
-    <a href="<%= new_user_url %>">Play CohabitateRPG</a>
+    <a class="logo" href="<%= root_url %>">COHABITATE</a>
+
+    <form action="<%= new_user_url %>" method="POST">
+      <%= auth_token_input %>
+      <input type="hidden" name="_method" value="get">
+      <button class="play-button">Play!</button>
+    </form>
 
   <% end %>
 </div>

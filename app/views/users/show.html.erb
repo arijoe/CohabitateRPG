@@ -1,10 +1,12 @@
 <%= render "shared/navbar" %>
 
-<h2>
-  <form action="<%= session_url %>" method="POST">
-    <%= auth_token_input %>
-    <input type="hidden" name="_method" value="delete">
-    <%= current_user.email %>
-    | <button>Sign Out</button>
-  </form>
-</h2>
+<ul class="user-info">
+  <li><%= current_user.email %></li>
+  <li>
+    <form action="/#/quest" method="POST">
+      <%= auth_token_input %>
+      <input type="hidden" name="_method" value="get">
+      <button class="play-button">My Quest</button>
+    </form>
+  </li>
+<ul>

@@ -1,14 +1,6 @@
 <div id="top-bar">
 
-  <% if logged_in? %>
-    <form action="<%= session_url %>" method="POST">
-      <%= auth_token_input %>
-      <input type="hidden" name="_method" value="delete">
-      <button>Sign Out</button>
-    </form>
-  <% else %>
-    <a href="<%= new_user_url %>">Play CohabitateRPG</a>
-  <% end %>
+  <%= render "shared/navbar" %>
 
 </div>
 
