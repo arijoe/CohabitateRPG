@@ -83,10 +83,14 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
   questShow: function () {
     if (!Cohabitate.currentQuest) {
-      var questID  = this.currentUser.quest.get(id);
-      this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
+      if (this.currentUser) {
+        var questID  = this.currentUser.quest.get(id);
+        this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
+      } else {
+        return;
+      }
     };
-    
+
     var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
     this._swapView(showView, this.$gameEl);
   },
