@@ -2,9 +2,10 @@
 
 <% if(Cohabitate.currentUser.isSignedIn()) { %>
 
-  Signed in as:
-  <a href="#users/<%= Cohabitate.currentUser.id %>"><%= Cohabitate.currentUser.escape("email") %></a> |
-  <a href="#" id="sign-out-link">Sign Out</a>
+  <span class="right-links session-links">
+    <a href="#users/<%= Cohabitate.currentUser.id %>"><%= Cohabitate.currentUser.escape("email") %></a>
+    <a href="#" id="sign-out-link">Sign Out</a>
+  </span>
 
 <% } else { %>
 
