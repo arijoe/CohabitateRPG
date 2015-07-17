@@ -12,8 +12,7 @@ window.Cohabitate = {
     this.currentUser = new Cohabitate.Models.CurrentUser();
     this.currentUser.fetch();
 
-    // this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
-
+    this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
 
     this.router = new Cohabitate.Routers.Router({
       $rootEl: $("#app-container"),

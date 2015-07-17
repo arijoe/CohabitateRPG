@@ -13,7 +13,7 @@ Cohabitate.Views.Header = Backbone.View.extend({
 
   render: function(){
     var content = this.template({ currentUser: Cohabitate.currentUser });
-    this.$el.append(content);
+    this.$el.html(content);
 
     return this;
   },
