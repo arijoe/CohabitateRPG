@@ -35,7 +35,6 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     if(this.callback) {
       this.callback();
     } else {
-      debugger
       Backbone.history.navigate("", { trigger: true });
     }
   }

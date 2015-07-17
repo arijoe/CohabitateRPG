@@ -23,26 +23,21 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
     return !this.isNew();
   },
 
-  // parse: function (response) {
-  //   if (response.members) {
-  //     this.members().set(response.members);
-  //     delete response.members;
-  //   };
-  //
-  //   if (response.lists) {
-  //     this.lists().set(response.lists);
-  //     delete response.lists;
-  //   }
-  //
-  //   return response;
-  // },
-  //
-  // members: function () {
-  //   if (!this._members) {
-  //     this._members = new Cohabitate.Collections.Members([], { quest: this });
-  //   }
-  //   return this._members;
-  // },
+  parse: function (response) {
+    if (response.quest) {
+      this.quest().set(response.quest);
+      delete response.quest;
+    };
+
+    return response;
+  },
+
+  quest: function () {
+    if (!this._quest) {
+      this._quest = new Cohabitate.Models.Quest();
+    }
+    return this._quest;
+  },
 
   signIn: function(options){
     var model = this;
