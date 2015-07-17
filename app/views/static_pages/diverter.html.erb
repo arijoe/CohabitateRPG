@@ -1,5 +1,13 @@
+<navbar id="top-bar" class="third">
+  <a class="logo" href="<%= root_url %>">COHABITATE</a>
+</navbar>
+
 <% if logged_in? %>
   <%= render "static_pages/root" %>
 <% else %>
   <%= render "static_pages/front" %>
 <% end %>
+
+<script>$(Cohabitate.initialize({
+  questID: <%= current_user.quest ? current_user.quest.id : nil %>
+}));</script>

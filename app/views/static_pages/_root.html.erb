@@ -1,9 +1,3 @@
-<div id="top-bar" class="third">
-
-  <%= render "shared/navbar" %>
-
-</div>
-
 <div class="app-container">
 
   <div id="game-bar" class="third">
@@ -11,7 +5,3 @@
   </div>
   <div id="game-main" class="third"></div>
 </div>
-
-<script>$(Cohabitate.initialize({
-  questID: <%= current_user.quest ? current_user.quest.id : nil %>
-}));</script>
