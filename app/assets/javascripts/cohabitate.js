@@ -14,7 +14,8 @@ window.Cohabitate = {
 
     this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
     this.router = new Cohabitate.Routers.Router({
-      $rootEl: $("#app-container")
+      $rootEl: $("#root-el"),
+      $gameEl: $("#app-container")
     });
 
     Backbone.history.start();

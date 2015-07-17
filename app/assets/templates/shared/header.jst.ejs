@@ -1,20 +1,16 @@
-<h1>CohabitateRPG</h1>
+<h1><a class="logo" href="#">COHABITATE</a></h1>
 
 <% if(Cohabitate.currentUser.isSignedIn()) { %>
 
-  <p>
-    Signed in as:
-    <a href="#users/<%= Cohabitate.currentUser.id %>"><%= Cohabitate.currentUser.escape("email") %></a> |
-    <a href="#" id="sign-out-link">Sign Out</a>
-  </p>
+  Signed in as:
+  <a href="#users/<%= Cohabitate.currentUser.id %>"><%= Cohabitate.currentUser.escape("email") %></a> |
+  <a href="#" id="sign-out-link">Sign Out</a>
 
 <% } else { %>
 
-  <p>
-    <a href="#users/new">Sign Up</a> |
+  <span class="session-links">
+    <a href="#users/new">Sign Up</a>
     <a href="#session/new">Sign In</a>
-  </p>
+  </span>
 
 <% } %>
-
-<hr>

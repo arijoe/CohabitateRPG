@@ -1,12 +1,23 @@
-<navbar id="top-bar" class="third">
-  <a class="logo" href="<%= root_url %>">COHABITATE</a>
-</navbar>
+<navbar id="top-bar" class="third group"></navbar>
 
-<% if logged_in? %>
-  <%= render "static_pages/root" %>
-<% else %>
-  <%= render "static_pages/front" %>
-<% end %>
+<div id="root-el">
+  <% if logged_in? %>
+    <%= render "static_pages/root" %>
+  <% else %>
+    <%= render "static_pages/front" %>
+  <% end %>
+</div>
+
+<footer>
+  <span id="spooky">SpookyGhost Design Labs, 2015</span>
+  <ul id="links">
+    <li id="link">Ghost Link</li>
+    <li id="link">Empty Link</li>
+    <li id="link">Dummy Link</li>
+  </ul>
+</footer>
+
+
 
 <script>$(Cohabitate.initialize({
   questID: <%= current_user && current_user.quest ?  current_user.quest.id : 0 %>

@@ -74,7 +74,7 @@ body {
   position: relative;
   color: #000;
   background: #f2ffff;
-  border: 1px solid #888;
+  border: 1px solid #32cd32;
   width: 98%;
   display: block;
   margin: 5px auto;
@@ -91,34 +91,46 @@ button {
 
 /*TOP BAR*/
 
+navbar {
+  position: relative;
+}
+
 navbar .logo {
   padding: 5px;
   text-decoration: none;
   margin: 0 auto;
   font-size: 22px;
   font-weight: bold;
-  color: #5f9ea0;
+  color: #858888;
   float: left;
+  transition: color .2s;
 }
 
 navbar .logo:hover {
-  color: #444;
+  color: #5f9ea0;
 }
 
-.session-links button:hover {
-  background: #f2ffff;
-  border: 1px solid #c32148;
-  color: #c32148;
+navbar .logo:active {
+  color: #32cd32;
 }
 
-.profile-button {
-  float: left;
-  border: 1px solid #888;
-}
-
-.session-button {
+.session-links {
   float: right;
-  border: 1px solid #888;
+}
+
+.session-links a {
+  float: left;
+  padding: 8px;
+  color: #555;
+  text-decoration: none;
+}
+
+.session-links a:hover {
+  color: #32cd32;
+}
+
+.session-links a:active {
+  color: #888;
 }
 
 /*MIDDLE BAR*/
@@ -185,17 +197,20 @@ navbar .logo:hover {
 p {
   background: #f2ffff;
   height: auto;
-  padding: 20px;
-  margin-top: 100px;
+  padding: 20px 45px;
+  margin-top: 170px;
+  border-top: 1px solid #32cd32;
+  border-bottom: 1px solid #32cd32;
 }
 
 footer {
+  border-top: 1px solid #32cd32;
   background: #555;
   color: #b5bbbb;
   text-align: right;
   width: 100%;
   position: absolute;
-  top: 1020px;
+  bottom: 0;
   margin: auto;
   padding: 2px;
   font-size: 14px;
@@ -210,7 +225,7 @@ footer {
 }
 
 #spooky:hover {
-  color: white;
+  color: #32cd32;
 }
 
 #links {

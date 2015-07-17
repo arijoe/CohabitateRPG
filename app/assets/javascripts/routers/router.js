@@ -1,12 +1,13 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    this.$gameEl = options.$gameEl;
     this.collection = new Cohabitate.Collections.Users();
     this.collection.fetch();
   },
 
   routes: {
-    "": "userIndex",
+    "": "questShow",
     "quest": "questShow",
     "users/new": "userNew",
     "quests/new": "questCreate",
@@ -22,7 +23,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var indexView = new Cohabitate.Views.UsersIndex({
       collection: this.collection
     });
-    this._swapView(indexView);
+    this._swapView(indexView, this.$rootEl);
   },
 
   userNew: function(){
@@ -33,7 +34,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       collection: this.collection,
       model: model
     });
-    this._swapView(formView);
+    this._swapView(formView, this.$rootEl);
   },
 
   userShow: function(id){
@@ -44,7 +45,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var showView = new Cohabitate.Views.UsersShow({
       model: model
     });
-    this._swapView(showView);
+    this._swapView(showView, this.$rootEl);
   },
 
   signIn: function(callback){
@@ -53,7 +54,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var signInView = new Cohabitate.Views.SignIn({
       callback: callback
     });
-    this._swapView(signInView);
+    this._swapView(signInView, this.$rootEl);
   },
 
   _requireSignedIn: function(callback){
@@ -84,7 +85,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     // if (!this._requireSignedIn(callback)) { return; }
 
     var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
-    this._swapView(showView);
+    this._swapView(showView, this.$gameEl);
   },
 
   questCreate: function () {
@@ -95,9 +96,9 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
   },
 
-  _swapView: function (view) {
+  _swapView: function (view, el) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    el.html(view.render().$el);
   }
 });
