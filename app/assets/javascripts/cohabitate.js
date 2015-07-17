@@ -9,7 +9,9 @@ window.Cohabitate = {
       this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
     };
 
-    // this.currentUser stuff
+    this.currentUser = new Cohabitate.Models.CurrentUser();
+    this.currentUser.fetch();
+
     // this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
 
 
