@@ -4,8 +4,11 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.is_leader = true
+    User.assign_username(@user)
 
     if @user.save
+      User.assign_leader_id(@user)
       login!(@user)
       render :show
     else

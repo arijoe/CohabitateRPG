@@ -56,6 +56,14 @@ class User < ActiveRecord::Base
     user.save
   end
 
+  def self.assign_username(user)
+    if user.username.nil? || user.username.empty?
+      user.username = user.email
+    end
+
+    user
+  end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
