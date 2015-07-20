@@ -8,7 +8,7 @@ class Quest < ActiveRecord::Base
     foreign_key: :leader_id,
     primary_key: :id
 
-  has_many :quest_memberships,
+  has_many :user_memberships,
     class_name: "QuestMembership",
     foreign_key: :quest_id,
     primary_key: :id,
@@ -16,7 +16,7 @@ class Quest < ActiveRecord::Base
 
   has_many :lists, dependent: :destroy
 
-  has_many :members, through: :quest_memberships, source: :user
+  has_many :members, through: :user_memberships, source: :members
 
   has_many :items, through: :lists, source: :items
 

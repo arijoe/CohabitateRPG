@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
       presence: true
   validates :email, uniqueness: true
   validates :password, {length: {minimum: 8, allow_nil: true}}
-  validates :username, uniqueness: {scope: :quest}
 
   attr_reader :password
 
@@ -19,12 +18,6 @@ class User < ActiveRecord::Base
     foreign_key: :leader_id,
     primary_key: :id
 
-  has_one :quest,
-    class_name: "Quest",
-    foreign_key: :user_id,
-    primary_key: :id,
-    dependent: :destroy
-
   has_one :led_quest,
     class_name: "Quest",
     foreign_key: :leader_id,
@@ -35,6 +28,12 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_one :quest, through: :quest_membership, source: :quests
+
+  has_many :roomies, through: :quest_membership, source: :members
+
+  has_many :lists, through: :led_quest, source: :lists
+
   has_many :created_tasks,
     class_name: "Item",
     foreign_key: :leader_id,
@@ -44,10 +43,6 @@ class User < ActiveRecord::Base
     class_name: "Items",
     foreign_key: :user_id,
     primary_key: :id
-
-  has_many :roomies, through: :quest, source: :members
-
-  has_many :lists, through: :led_quest, source: :lists
 
   def self.assign_leader_id(user)
     if user.is_leader
