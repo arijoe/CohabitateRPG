@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716192739) do
+ActiveRecord::Schema.define(version: 20150720143957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string   "label",                     null: false
+    t.text     "description",  default: ""
+    t.integer  "duedate"
+    t.integer  "points",       default: 10
+    t.integer  "leader_id",                 null: false
+    t.integer  "list_id",                   null: false
+    t.integer  "completer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["completer_id"], name: "index_items_on_completer_id", using: :btree
+  add_index "items", ["leader_id"], name: "index_items_on_leader_id", using: :btree
+  add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
     t.string   "type",       null: false
