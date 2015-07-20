@@ -102,17 +102,17 @@ navbar .logo {
   margin: 0 auto;
   font-size: 22px;
   font-weight: bold;
-  color: #858888;
+  color: #5f9ea0;
   float: left;
   transition: color .2s;
 }
 
 navbar .logo:hover {
-  color: #5f9ea0;
+  color: #32cd32;
 }
 
 navbar .logo:active {
-  color: #32cd32;
+  color: #5f9ea0;
 }
 
 .right-links {
@@ -162,6 +162,10 @@ navbar .logo:active {
   margin-left: 35px;
 }
 
+.quest-info:hover {
+  color: #5f9ea0;
+}
+
 .quest-name {
   float: left;
   position: absolute;
@@ -174,7 +178,7 @@ navbar .logo:active {
 }
 
 .quest-member:hover {
-  color: firebrick;
+  color: #5f9ea0;
 }
 
 /*LIST VIEW*/
