@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
       presence: true
   validates :email, uniqueness: true
   validates :password, {length: {minimum: 8, allow_nil: true}}
+  validates :username, uniqueness: {scope: :quest}
 
   attr_reader :password
 
