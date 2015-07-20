@@ -12,7 +12,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     "users/new": "userNew",
     "quests/new": "questCreate",
     "quests/edit": "questEdit",
-    "users/create/:id": "createUser",
     "users/:id": "userShow",
     "session/new": "signIn"
   },

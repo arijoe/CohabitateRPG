@@ -9,7 +9,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     "submit form": "submit"
   },
 
-  template: JST['shared/modal'],
+  template: JST['shared/sign_in'],
 
   render: function(){
     this.$el.html(this.template());
