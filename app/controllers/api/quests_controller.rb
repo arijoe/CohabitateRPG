@@ -17,14 +17,14 @@ class Api::QuestsController < ApplicationController
     if @quest
       render :show
     else
-      render json: ["None such quest, compadre."], status: 404
+      render :create
     end
   end
 
   def edit
     @quest = Quest.find(params[:id])
 
-    if @quest.save
+    if @quest.update_attributes(quest_params)
       render json: @quest
     else
       render json: @quest.errors.full_messages, status: :unprocessable_entity
