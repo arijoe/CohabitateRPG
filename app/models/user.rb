@@ -36,13 +36,13 @@ class User < ActiveRecord::Base
 
   has_many :created_tasks,
     class_name: "Item",
-    foreign_key: :leader_id;
-    primary_key: :user_id
+    foreign_key: :leader_id,
+    primary_key: :id
 
   has_many :completed_tasks,
     class_name: "Items",
     foreign_key: :user_id,
-    primary_key: :id;
+    primary_key: :id
 
   has_many :roomies, through: :quest, source: :members
 
