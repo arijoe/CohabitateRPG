@@ -1,5 +1,4 @@
 # CohabitateRPG
-*pending*
 [Heroku link][heroku]
 
 [heroku]: http://cohabitate-rpg.herokuapp.com
