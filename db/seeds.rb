@@ -1,28 +1,31 @@
 User.create!(
   email: "finn@ooo.com",
   is_leader: true,
+  password: "bubblegum",
   leader_id: 1,
-  password: "bubblegum"
+  username: "Finn"
 )
 
 User.create!(
   email: "jake@ooo.com",
   is_leader: false,
+  password: "bubblegum",
   leader_id: 1,
-  password: "bubblegum"
+  username: "Jake"
 )
 
 User.create!(
   email: "bmo@ooo.com",
   is_leader: false,
+  password: "bubblegum",
   leader_id: 1,
-  password: "bubblegum"
+  username: "B-Mo"
 )
 
 Quest.create!(
-  title: "treehouse",
+  title: "Treehouse",
   leader_id: 1,
-  user_id: 1
+  membership_id: 1
 )
 
 User.all[0..2].each do |user|

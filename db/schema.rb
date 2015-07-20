@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720150809) do
+ActiveRecord::Schema.define(version: 20150720152125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20150720150809) do
     t.integer  "leader_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",    null: false
   end
 
   add_index "quests", ["leader_id"], name: "index_quests_on_leader_id", using: :btree
