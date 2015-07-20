@@ -9,7 +9,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     "submit form": "submit"
   },
 
-  template: JST['shared/sign_in'],
+  template: JST['shared/modal'],
 
   render: function(){
     this.$el.html(this.template());
@@ -35,8 +35,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     if(this.callback) {
       this.callback();
     } else {
-      Backbone.history.navigate("quest", { trigger: true });
+      Backbone.history.navigate("", { trigger: true });
     }
   }
-
 });

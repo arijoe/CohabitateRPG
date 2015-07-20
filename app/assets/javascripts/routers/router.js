@@ -12,6 +12,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     "users/new": "userNew",
     "quests/new": "questCreate",
     "quests/edit": "questEdit",
+    "users/create/:id": "createUser",
     "users/:id": "userShow",
     "session/new": "signIn"
   },
@@ -85,7 +86,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     if (!Cohabitate.currentQuest) {
       if (this.currentUser) {
         var questID  = this.currentUser.quest.get(id);
-        this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
+        Cohabitate.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
       } else {
         return;
       }
