@@ -24,6 +24,6 @@ class Api::ListsController < ApplicationController
 
   private
   def lists_params
-    params.require(:list).permit(:title, :quest_id)
+    params.require(:list).permit(:type, :quest_id)
   end
 end
