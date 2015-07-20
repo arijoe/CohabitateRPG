@@ -1,12 +1,11 @@
 <container class="profile-display group"></container>
 
-<container class="quest-info">
+<container class="quest-info group">
   <div class="quest-name"><%= quest.escape('title') %></div>
-
 </container>
 
 <ul class="quest-members group">
   <% quest.members().each(function (member) { %>
-    <li class="quest-member"><%= member.escape('email') %></li>
+    <li class="quest-member"><%= member.escape('username') %></li>
   <% }) %>
 </ul>

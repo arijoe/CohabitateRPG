@@ -41,11 +41,12 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var callback = this.userShow.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
 
+    debugger
     var model = this.collection.getOrFetch(id);
     var showView = new Cohabitate.Views.UsersShow({
       model: model
     });
-    this._swapView(showView, this.$rootEl);
+    this._swapView(showView, $('.quest-info'));
   },
 
   signIn: function(callback){
@@ -82,7 +83,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-    debugger
     if (!Cohabitate.currentQuest) {
       if (this.currentUser) {
         var questID  = this.currentUser.quest.get(id);

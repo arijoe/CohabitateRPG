@@ -8,6 +8,7 @@ Cohabitate.Views.UsersShow = Backbone.View.extend({
 
   render: function(){
     var html = this.template({ user: this.model });
+    debugger
     this.$el.html(html);
 
     return this;

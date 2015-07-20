@@ -1,5 +1,5 @@
 Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
-  gameTemplate: JST['quests/main_show'],
+  mainTemplate: JST['quests/main_show'],
 
   barTemplate: JST['quests/bar_show'],
 
@@ -12,11 +12,11 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    // add events
+    
   },
 
   render: function () {
-    var mainContent = this.gameTemplate({ quest: this.model });
+    var mainContent = this.mainTemplate({ quest: this.model });
     var barContent = this.barTemplate({ quest: this.model });
     this.$gameMain.html(mainContent);
     this.$gameBar.html(barContent);

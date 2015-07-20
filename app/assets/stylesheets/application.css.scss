@@ -161,6 +161,7 @@ navbar .logo:active {
 .quest-info {
   float: left;
   margin-left: 35px;
+  height: inherit;
 }
 
 .quest-info:hover {
@@ -176,6 +177,7 @@ navbar .logo:active {
 .quest-members {
   float: right;
   margin: 15px;
+  height: inherit;
 }
 
 .quest-member:hover {
