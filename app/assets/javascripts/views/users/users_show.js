@@ -1,5 +1,7 @@
 Cohabitate.Views.UsersShow = Backbone.View.extend({
-  tagName: '<#user-info>',
+  tagName: 'div',
+
+  className: 'user-info',
 
   initialize: function(options){
     this.listenTo(this.model, "sync change", this.render);

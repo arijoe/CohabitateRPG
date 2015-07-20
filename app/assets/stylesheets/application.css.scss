@@ -24,7 +24,7 @@ html, body, div, navbar, ul, li, h1, h2, img, button {
   font: inherit;
   color: inherit;
   text-align: inherit;
-  text-decoration: none;
+  text-decoration: inherit;
   vertical-align: inherit;
   background: transparent;
 }
@@ -225,7 +225,7 @@ navbar .logo:active {
 
 /*SPLASH PAGE*/
 
-p {
+p.info {
   background: #f2ffff;
   height: auto;
   padding: 20px 45px;
