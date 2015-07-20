@@ -11,10 +11,6 @@ class Api::ItemsController < ApplicationController
     end
   end
 
-  def show
-    @item = Item.
-  end
-
   def update
     @item = Item.find(params[:id])
 

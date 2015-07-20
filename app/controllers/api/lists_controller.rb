@@ -4,11 +4,16 @@ class Api::ListsController < ApplicationController
   def update
     @list = current_quest.lists.find(params[:id])
 
-    if @list.save
+    if @list.update_attributes(list_params)
       render json: @list
     else
       render json: @list.errors.full_messages, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @list = List.find(params[:id])
+    render :show
   end
 
   def destroy
