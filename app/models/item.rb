@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  validates :label, :leader_id, :list_id, :completed, presence: true
+  validates :label, :leader_id, :list_id, presence: true
   validate :unique_within_quest
 
   belongs_to :leader,

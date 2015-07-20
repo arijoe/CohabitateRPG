@@ -30,3 +30,15 @@ User.create!(
 User.all[0..2].each do |user|
   Quest.all[0].members << user
 end
+
+i = Quest.all.first.items.new ({
+  label: "Brush teeth.",
+  description: "Brush those teeth.",
+  duedate: Time.now + 5000,
+  completed: false
+})
+
+i.leader = User.all.first
+i.list = Quest.all.first.lists.first
+i.completed = false
+i.save!
