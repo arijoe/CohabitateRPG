@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   validates :label, :leader_id, :list_id, presence: true
-  validates :label, uniqueness: {scope: :quest}
+  validate :unique_within_quest
 
   belongs_to :leader,
     class_name: "User",
@@ -16,4 +16,20 @@ class Item < ActiveRecord::Base
     class_name: "User",
     foreign_key: :user_id,
     primary_key: :id
+
+    private
+    def unique_within_quest
+      labels = []
+
+      if current_quest
+        current_quest.items.each do |item|
+          next if item = self
+          labels << item.label
+        end
+      end
+
+      if labels.include?(label)
+        errors[:base] << "That item already exists within this quest."
+      end
+    end
 end

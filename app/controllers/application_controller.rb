@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_quest
-    return nil unless session[:session_token]
-    @current_quest ||= current_user.quest
+    return nil unless current_user && current_user.quest
+    current_user.quest
   end
 
   def login!(user)
@@ -33,6 +33,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_leader
-    render json: ["Only your quest leader can do that."], status: :unauthorized
+    if !current_user.is_leader!
+      render json: ["Only your quest leader can do that."], status: :unauthorized
+    end
   end
 end

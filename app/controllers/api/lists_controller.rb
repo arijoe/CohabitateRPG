@@ -1,5 +1,5 @@
 class Api::ListsController < ApplicationController
-  before_action :require_leader
+  before_action :require_leader, only: [:update, :destroy]
 
   def update
     @list = current_quest.lists.find(params[:id])
