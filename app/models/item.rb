@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   validates :label, :leader_id, :list_id, presence: true
+  validates :label, uniqueness: {scope: :quest}
 
   belongs_to :leader,
     class_name: "User",
