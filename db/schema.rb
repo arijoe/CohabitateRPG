@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720152125) do
+ActiveRecord::Schema.define(version: 20150720190412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150720152125) do
     t.integer  "completer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "completed"
   end
 
   add_index "items", ["completer_id"], name: "index_items_on_completer_id", using: :btree

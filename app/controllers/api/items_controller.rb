@@ -3,6 +3,7 @@ class Api::ItemsController < ApplicationController
 
   def create
     @item = current_quest.items.new(item_params)
+    @item.completed = false
 
     if @item.save
       render json: @item
@@ -31,8 +32,8 @@ class Api::ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(
       :label, :description, :duedate,
-      :points, :leader_id, :list_id, :completer_id,
-      :created_at, :updated_at
+      :points, :leader_id, :list_id, :completed
+      :completer_id, :created_at, :updated_at
     )
   end
 end
