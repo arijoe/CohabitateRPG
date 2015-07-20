@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
       presence: true
   validates :email, uniqueness: true
   validates :password, {length: {minimum: 8, allow_nil: true}}
+  validate :unique_within_quest
 
   attr_reader :password
 
@@ -81,5 +82,18 @@ class User < ActiveRecord::Base
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  private
+  def unique_within_quest
+    usernames = []
+
+    if quest
+      quest.members.each { |member| usernames << member.username }
+    end
+
+    if usernames.include?(username)
+      errors[:base] << "That username is already taken within this quest."
+    end
   end
 end
