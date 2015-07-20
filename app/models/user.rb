@@ -89,7 +89,10 @@ class User < ActiveRecord::Base
     usernames = []
 
     if quest
-      quest.members.each { |member| usernames << member.username }
+      quest.members.each do |member|
+        next if member = self
+        usernames << member.username
+      end
     end
 
     if usernames.include?(username)
