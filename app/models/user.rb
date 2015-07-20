@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
   has_one :quest,
     class_name: "Quest",
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_one :led_quest,
     class_name: "Quest",
@@ -32,6 +33,16 @@ class User < ActiveRecord::Base
     class_name: "QuestMembership",
     foreign_key: :user_id,
     primary_key: :id
+
+  has_many :created_tasks,
+    class_name: "Item",
+    foreign_key: :leader_id;
+    primary_key: :user_id
+
+  has_many :completed_tasks,
+    class_name: "Items",
+    foreign_key: :user_id,
+    primary_key: :id;
 
   has_many :roomies, through: :quest, source: :members
 

@@ -18,6 +18,8 @@ class Quest < ActiveRecord::Base
 
   has_many :members, through: :quest_memberships, source: :user
 
+  has_many :items, through: :lists, source: :items
+
   def add_lists
     List.make!(id)
   end

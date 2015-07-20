@@ -4,6 +4,12 @@ class List < ActiveRecord::Base
   belongs_to :quest
   has_one :leader, through: :quest, source: :leader
 
+  has_many :items,
+    class_name: "Item",
+    foreign_key: :list_id,
+    primary_key: :id,
+    dependent: :destroy
+
   def self.make!(quest_id)
     classes = [Daily, Weekly, Monthly, Todo]
 
