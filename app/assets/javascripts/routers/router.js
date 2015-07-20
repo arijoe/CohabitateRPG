@@ -41,7 +41,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var callback = this.userShow.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
 
-    debugger
     var model = this.collection.getOrFetch(id);
     var showView = new Cohabitate.Views.UsersShow({
       model: model

@@ -4,8 +4,9 @@
   <div class="quest-name"><%= quest.escape('title') %></div>
 </container>
 
-<ul class="quest-members group">
-  <% quest.members().each(function (member) { %>
-    <li class="quest-member"><%= member.escape('username') %></li>
-  <% }) %>
-</ul>
+<container class="quest-members group">
+  <ul class="quest-members-list">  
+    <% quest.members().each(function (member) { %>
+      <li class="quest-member"><%= member.escape('username') %></li>
+    <% }) %>
+  </ul>

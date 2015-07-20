@@ -146,22 +146,27 @@ navbar .logo:active {
 /*MIDDLE BAR*/
 
 #game-bar {
-  min-height: 135px;
+  height: 135px;
+  min-width: 650px;
   border: 1px solid #888;
 }
 
 .profile-display {
   float: left;
-  height: 125px;
-  width: 125px;
-  margin: 5px 35px 5px 5px;
-  outline: 1px solid #32cd32;
+  height: inherit;
+  min-width: 149px;
+  width: calc(15%);
 }
 
 .quest-info {
+  position: relative;
   float: left;
-  margin-left: 35px;
-  height: inherit;
+  height: 135px;
+  min-width: 348px;
+  width: calc(70% - 2px);
+  background: #fff;
+  border-left: 1px solid #32cd32;
+  border-right: 1px solid #32cd32;
 }
 
 .quest-info:hover {
@@ -169,15 +174,26 @@ navbar .logo:active {
 }
 
 .quest-name {
-  float: left;
   position: absolute;
-  bottom: 5px;
+  bottom: 15px;
+  left: 15px;
 }
 
 .quest-members {
-  float: right;
-  margin: 15px;
+  float: left;
+  min-width: 149px;
+  width: calc(15%);
   height: inherit;
+}
+
+.quest-members-list {
+  margin-top: 10px auto;
+  text-align: center;
+}
+
+.quest-members-list > li {
+  float: left;
+  padding: 5px;
 }
 
 .quest-member:hover {
