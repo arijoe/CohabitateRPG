@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   has_one :quest, through: :quest_membership, source: :quests
 
-  has_many :roomies, through: :quest_membership, source: :members
+  has_many :roomies, through: :quest, source: :members
 
   has_many :lists, through: :led_quest, source: :lists
 
