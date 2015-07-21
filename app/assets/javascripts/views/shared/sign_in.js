@@ -6,7 +6,8 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
   },
 
   events: {
-    "submit form": "submit"
+    "submit form": "submit",
+    "click #demo-user": "demoUser"
   },
 
   template: JST['shared/sign_in'],
@@ -37,5 +38,13 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     } else {
       Backbone.history.navigate("", { trigger: true });
     }
+  },
+
+  demoUser: function (event) {
+    event.preventDefault();
+    Cohabitate.currentUser.signIn({
+      email: "finn@ooo.com",
+      password: "bubblegum"
+    })
   }
 });
