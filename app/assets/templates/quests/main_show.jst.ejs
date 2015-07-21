@@ -1,7 +1,7 @@
 <ul class="lists group">
   <% lists.each(function (list) { %>
-    <ul class="list">
-      <li id="list-type"><%= list.escape('type') %></li>
-    </ul>
+    <container class="list">
+      <h2 id="list-type"><%= list.escape('type') %></h2>
+    </container>
   <% }) %>
 </ul>

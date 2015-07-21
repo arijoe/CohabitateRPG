@@ -4,8 +4,7 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.user = options.user;
     this.collection = this.model.lists();
-    this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "add", this.render);
+    this.listenTo(this.model, "sync add", this.render);
   },
 
   renderQuestBar: function () {
@@ -26,7 +25,6 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
     var content = this.template();
     this.$el.html(content);
 
