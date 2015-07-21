@@ -29,7 +29,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     };
 
     var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
-    this._swapView(showView, this.$gameEl);
+    this._swapView(showView);
   },
 
   questCreate: function () {
@@ -43,7 +43,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   _swapView: function (view, el) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    el.html(view.render().$el);
+    this.$rootEl.html(view.render().$el);
   },
 
 
@@ -61,7 +61,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       collection: this.collection,
       model: model
     });
-    this._swapView(formView, this.$rootEl);
+    this._swapView(formView);
   },
 
   userShow: function(id){
@@ -82,7 +82,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var signInView = new Cohabitate.Views.SignIn({
       callback: callback
     });
-    this._swapView(signInView, this.$rootEl);
+    this._swapView(signInView);
   },
 
   _requireSignedIn: function(callback){
