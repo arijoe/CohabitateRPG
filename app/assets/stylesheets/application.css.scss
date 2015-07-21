@@ -299,7 +299,7 @@ footer {
 
 #spooky {
   float: left;
-  margin: 5px;
+  padding: 5px;
   margin-left: 20px;
   transition: color 2s;
 }
@@ -315,7 +315,8 @@ footer {
 }
 
 #link {
-  margin: 5px;
+  float: left;
+  padding: 5px;
 }
 
 #link:hover {
