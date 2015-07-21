@@ -13,7 +13,7 @@ Cohabitate.Views.GamemainShow = Backbone.CompositeView.extend({
     var that = this;
     this.collection.each( function (list) {
       var view = new Cohabitate.Views.ListShow({
-        model: list
+        collection: list.items();
       });
 
       that.addSubview(".list", view);
