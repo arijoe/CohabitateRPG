@@ -7,7 +7,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   events: {
-
+    
   },
 
   // lots of editing and viewing will be taking place here
