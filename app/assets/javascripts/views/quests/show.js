@@ -12,7 +12,7 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    
+
   },
 
   render: function () {
