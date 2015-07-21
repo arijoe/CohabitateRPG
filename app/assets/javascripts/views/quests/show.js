@@ -8,19 +8,31 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "add", this.render);
   },
 
-  events: {
+  renderQuestBar: function () {
+    var view = new Cohabitate.Views.GamebarShow({
+      user: this.user,
+      quest: this.model
+    });
 
+    this.addSubview("#game-bar", view);
   },
 
-  addQuestBar: function (bar) {
-    
-  }
+  renderQuestMain: function () {
+    var view = new Cohabitate.Views.GamemainShow({
+      collection: this.collection
+    });
+
+    this.addSubview("#game-main", view);
+  },
 
   render: function () {
     debugger
-    var content = this.template({ quest: this.model });
-    this.$el.htmlcontent);
-    // this.attachSubviews();
+    var content = this.template();
+    this.$el.html(content);
+
+    this.renderQuestBar();
+    this.renderQuestMain();
+
     return this;
   }
 });
