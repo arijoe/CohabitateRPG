@@ -34,7 +34,6 @@ end
 i = Quest.all.first.items.new ({
   label: "Brush teeth.",
   description: "Brush those teeth.",
-  duedate: Time.now + 5000,
   completed: false
 })
 
@@ -42,3 +41,14 @@ i.leader = User.all.first
 i.list = Quest.all.first.lists.first
 i.completed = false
 i.save!
+
+j = Quest.all.first.items.new ({
+  label: "Feed Loraine.",
+  description: "Chicken's gotta eat, man.",
+  completed: false
+})
+
+j.leader = User.all.first
+j.list = Quest.all.first.lists.first
+j.completed = false
+j.save!

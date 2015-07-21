@@ -2,7 +2,7 @@ Cohabitate.Views.GamemainShow = Backbone.CompositeView.extend({
   template: JST['quests/main_show'],
 
   initialize: function () {
-
+    
   }
 
   events: {
