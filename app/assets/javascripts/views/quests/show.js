@@ -3,11 +3,10 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
 
   barTemplate: JST['quests/bar_show'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.user = options.user;
-    this.collection = this.model.lists().items();
+    this.collection = this.model.lists();
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "add", this.addItem);
   },
 
   events: {
@@ -17,8 +16,8 @@ Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
   render: function () {
     var mainContent = this.mainTemplate({ quest: this.model });
     var barContent = this.barTemplate({ quest: this.model });
-    this.$gameMain.html(mainContent);
-    this.$gameBar.html(barContent);
+    this.$rootEl.html(mainContent);
+    // this.attachSubviews();
     return this;
   }
 });
