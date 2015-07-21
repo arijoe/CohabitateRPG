@@ -1,0 +1,7 @@
+<h2 id="list-type"><%= list.escape('type') %></h2>
+
+<ul class="items-list">
+  <% items && items.each( function (item) { %>
+    <li class="item"><%= item.escape('label') %></li>
+  <% }) %>
+</ul>
