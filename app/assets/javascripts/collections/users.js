@@ -1,5 +1,6 @@
 Cohabitate.Collections.Users = Backbone.Collection.extend({
   url: "/api/users",
+  
   model: Cohabitate.Models.User,
 
   getOrFetch: function(id) {
