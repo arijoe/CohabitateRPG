@@ -12,9 +12,9 @@ Cohabitate.Models.List = Backbone.Model.extend ({
 
   items: function () {
     if (!this._items) {
-      this._items = new Cohabitate.Collections.Items();
+      this._items = new Cohabitate.Collections.Items([], {list: this});
     }
 
-    return this._item;
+    return this._items;
   }
 });
