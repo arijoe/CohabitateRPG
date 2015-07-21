@@ -12,6 +12,11 @@ class Api::ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+    render :show
+  end
+
   def update
     @item = Item.find(params[:id])
 
