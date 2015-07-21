@@ -1,8 +1,34 @@
 Cohabitate.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
-  email: function(){
-    return this.escape("email");
+  parse: function (response) {
+    if (response.quest) {
+      this.quest().set(response.quest);
+      delete response.quest;
+    };
+
+    if (response.roomies) {
+      this.roomies().set(response.roomies);
+      delete response.roomies;
+    };
+
+    return response;
+  },
+
+  quest: function () {
+    if (!this._quest) {
+      this._quest = new Cohabitate.Models.Quest();
+    }
+
+    return this._quest;
+  },
+
+  roomies: function () {
+    if (!this._roomies) {
+      this._roomies = new Cohabitate.Collection.Members();
+    }
+
+    return this._roomies;
   },
 
   toJSON: function(){
@@ -21,22 +47,6 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
 
   isSignedIn: function() {
     return !this.isNew();
-  },
-
-  parse: function (response) {
-    if (response.quest) {
-      this.quest().set(response.quest);
-      delete response.quest;
-    };
-
-    return response;
-  },
-
-  quest: function () {
-    if (!this._quest) {
-      this._quest = new Cohabitate.Models.Quest();
-    }
-    return this._quest;
   },
 
   signIn: function(options){

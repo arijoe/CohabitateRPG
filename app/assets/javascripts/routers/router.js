@@ -53,16 +53,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
 
 
-  userIndex: function(){
-    var callback = this.index.bind(this);
-    if (!this._requireSignedIn(callback)) { return; }
-
-    var indexView = new Cohabitate.Views.UsersIndex({
-      collection: this.collection
-    });
-    this._swapView(indexView, this.$rootEl);
-  },
-
   userNew: function(){
     if (!this._requireSignedOut()) { return; }
 
