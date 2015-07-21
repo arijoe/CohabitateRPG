@@ -9,6 +9,4 @@
 
 <%= render "shared/footer" %>
 
-<script>$(Cohabitate.initialize({
-  questID: <%= current_user && current_user.quest ?  current_user.quest.id : 0 %>
-}));</script>
+<script>$(Cohabitate.initialize());</script>

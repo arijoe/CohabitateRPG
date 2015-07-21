@@ -1,7 +1,6 @@
 Cohabitate.Routers.Router = Backbone.Router.extend ({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.$gameEl = options.$gameEl;
     this.collection = new Cohabitate.Collections.Users();
     this.collection.fetch();
   },
@@ -15,6 +14,44 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     "users/:id": "userShow",
     "session/new": "signIn"
   },
+
+  questShow: function () {
+
+      // questID: <%= current_user && current_user.quest ?  current_user.quest.id : 0 %>
+
+    if (!Cohabitate.currentQuest) {
+      if (this.currentUser) {
+        var questID  = this.currentUser.quest.get(id);
+        Cohabitate.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
+      } else {
+        return;
+      }
+    };
+
+    var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
+    this._swapView(showView, this.$gameEl);
+  },
+
+  questCreate: function () {
+
+  },
+
+  questEdit: function () {
+
+  },
+
+  _swapView: function (view, el) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    el.html(view.render().$el);
+  },
+
+
+
+
+
+
+
 
   userIndex: function(){
     var callback = this.index.bind(this);
@@ -80,33 +117,5 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
   _goHome: function(){
     Backbone.history.navigate("", { trigger: true });
-  },
-
-  questShow: function () {
-    if (!Cohabitate.currentQuest) {
-      if (this.currentUser) {
-        var questID  = this.currentUser.quest.get(id);
-        Cohabitate.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
-      } else {
-        return;
-      }
-    };
-
-    var showView = new Cohabitate.Views.QuestShow({ model: Cohabitate.currentQuest });
-    this._swapView(showView, this.$gameEl);
-  },
-
-  questCreate: function () {
-
-  },
-
-  questEdit: function () {
-
-  },
-
-  _swapView: function (view, el) {
-    this._currentView && this._currentView.remove();
-    this._currentView = view;
-    el.html(view.render().$el);
   }
 });

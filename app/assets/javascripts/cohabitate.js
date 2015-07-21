@@ -4,20 +4,17 @@ window.Cohabitate = {
   Views: {},
   Routers: {},
   initialize: function(options) {
-    if (options.questID !== 0) {
-      Cohabitate.Collections.quests.fetch();
-      this.currentQuest = Cohabitate.Collections.quests.getOrFetch(options.questID);
-    };
-
     this.currentUser = new Cohabitate.Models.CurrentUser();
-    this.currentUser.fetch();
+    this.currentUser.fetch({
+      success: function () {
+        this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
 
-    this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
-    this.router = new Cohabitate.Routers.Router({
-      $rootEl: $("#root-el"),
-      $gameEl: $("#app-container")
+        new Cohabitate.Routers.Router({
+          $rootEl: $("#root-el")
+        });
+
+        Backbone.history.start();
+      }
     });
-
-    Backbone.history.start();
   }
 };
