@@ -149,7 +149,7 @@ navbar .logo:active {
   margin: 0 auto;
   width: 400px;
   color: #111;
-  background: #5f9ea0;
+  background: rgba(0, 80, 90, 0.5);
   opacity: 0.8;
   border: none;
 }
@@ -186,6 +186,15 @@ navbar .logo:active {
 
 .form > button:hover {
   background: #32cd32;
+  color: #eee;
+}
+
+.form > button#guest-login {
+  background: #32cd32;
+}
+
+.form > button#guest-login:active {
+  background: #eee;
 }
 
 .form > button:active {
