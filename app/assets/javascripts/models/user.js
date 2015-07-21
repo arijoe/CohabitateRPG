@@ -7,7 +7,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
       delete response.quest;
     };
 
-    if (response.roomies) {
+    if (response.roomies && response.roomies.length > 0) {
       this.roomies().set(response.roomies);
       delete response.roomies;
     };

@@ -1,6 +1,6 @@
 Cohabitate.Views.SignIn = Backbone.View.extend({
 
-  initialize: function(options){
+  initialize: function (options) {
     this.callback = options.callback;
     this.listenTo(Cohabitate.currentUser, "signIn", this.signInCallback);
   },
@@ -18,7 +18,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     return this;
   },
 
-  submit: function(event){
+  submit: function (event) {
     event.preventDefault();
     var $form = $(event.currentTarget);
     var formData = $form.serializeJSON().user;
@@ -32,7 +32,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     });
   },
 
-  signInCallback: function(event){
+  signInCallback: function (event) {
     if(this.callback) {
       this.callback();
     } else {

@@ -16,18 +16,18 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-
-// questID: <%= current_user && current_user.quest ?  current_user.quest.id : 0 %>
-    this._requireSignedIn ()
     if (Cohabitate.currentUser.isSignedIn()) {
       var quest = Cohabitate.currentUser.quest();
+
       if (quest.isNew()) {
         Backbone.history.navigate("quests/new", { trigger: true });
       } else {
         var showView = new Cohabitate.Views.QuestShow({ model: quest });
       }
     } else {
-      var showView = new Cohabitate.Views.SignIn.new();
+      var showView = new Cohabitate.Views.SignIn(
+        Cohabitate.Views.SignIn.signInCallback
+      );
     }
 
     this._swapView(showView);
