@@ -16,15 +16,15 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
+    debugger
     if (Cohabitate.currentUser.isSignedIn()) {
       var quest = Cohabitate.currentUser.quest();
+      quest = Cohabitate.Collections.quests.getOrFetch(quest.id);
 
       if (quest.isNew()) {
         Backbone.history.navigate("/quests/new", { trigger: true });
       } else {
-        quest = Cohabitate.Collections.quests.getOrFetch(quest.id);
-
-        var showView = new Cohabitate.Views.QuestShow({
+          var showView = new Cohabitate.Views.QuestShow({
           model: quest,
           user: Cohabitate.currentUser
          });
