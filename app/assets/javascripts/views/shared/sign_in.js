@@ -25,10 +25,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
 
     Cohabitate.currentUser.signIn({
       email: formData.email,
-      password: formData.password,
-      error: function(){
-        alert("Wrong username/password combination. Please try again.");
-      }
+      password: formData.password
     });
   },
 

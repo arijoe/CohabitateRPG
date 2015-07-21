@@ -29,11 +29,7 @@ Cohabitate.Views.UsersForm = Backbone.View.extend({
       success: function(){
         Cohabitate.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("", { trigger: true });
-      },
-      error: function(data){
-        alert("Form invalid. Let the user know what went wrong.");
-        console.log(data);
+        Backbone.history.navigate("/quests/new", { trigger: true });
       }
     });
   }
