@@ -20,9 +20,12 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       var quest = Cohabitate.currentUser.quest();
 
       if (quest.isNew()) {
-        Backbone.history.navigate("quests/new", { trigger: true });
+        Backbone.history.navigate("/quests/new", { trigger: true });
       } else {
-        var showView = new Cohabitate.Views.QuestShow({ model: quest });
+        var showView = new Cohabitate.Views.QuestShow({
+          model: quest,
+          user: Cohabitate.currentUser
+         });
       }
     } else {
       var showView = new Cohabitate.Views.SignIn(
