@@ -286,8 +286,10 @@ navbar .logo:active {
 p.info {
   background: #f2ffff;
   height: auto;
-  padding: 25px 45px;
-  margin-top: 70px;
+  padding: 25px calc(15% - 20px);
+  position: absolute;
+  bottom: calc(15% + 30px);
+  z-index: -1;
   border-top: 1px solid #32cd32;
   border-bottom: 1px solid #32cd32;
 }
