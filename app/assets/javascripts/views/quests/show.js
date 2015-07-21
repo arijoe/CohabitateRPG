@@ -1,22 +1,25 @@
 Cohabitate.Views.QuestShow = Backbone.CompositeView.extend({
-  mainTemplate: JST['quests/main_show'],
-
-  barTemplate: JST['quests/bar_show'],
+  template: JST['quests/show'],
 
   initialize: function (options) {
     this.user = options.user;
     this.collection = this.model.lists();
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "add", this.render);
   },
 
   events: {
 
   },
 
+  addQuestBar: function (bar) {
+    
+  }
+
   render: function () {
-    var mainContent = this.mainTemplate({ quest: this.model });
-    var barContent = this.barTemplate({ quest: this.model });
-    this.$rootEl.html(mainContent);
+    debugger
+    var content = this.template({ quest: this.model });
+    this.$el.htmlcontent);
     // this.attachSubviews();
     return this;
   }

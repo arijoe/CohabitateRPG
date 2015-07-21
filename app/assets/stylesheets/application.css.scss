@@ -288,7 +288,7 @@ p.info {
   height: auto;
   padding: 25px calc(15% - 20px);
   position: absolute;
-  bottom: calc(15% + 30px);
+  bottom: calc(20% - 15px);
   z-index: -1;
   border-top: 1px solid #32cd32;
   border-bottom: 1px solid #32cd32;
@@ -309,6 +309,7 @@ footer {
   padding: 2px;
   font-size: 14px;
   font-style: italic;
+  z-index: -2;
 }
 
 #spooky {
