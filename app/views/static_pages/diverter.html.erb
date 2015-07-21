@@ -1,23 +1,13 @@
 <navbar id="top-bar" class="third group"></navbar>
 
 <div id="root-el">
-  <% if logged_in? %>
-    <%= render "static_pages/root" %>
-  <% else %>
-    <%= render "static_pages/front" %>
-  <% end %>
+  <div class="app-container">
+    <div id="game-bar" class="third"></div>
+    <div id="game-main"></div>
+  </div>
 </div>
 
-<footer>
-  <span id="spooky">SpookyGhost Design Labs, 2015</span>
-  <ul id="links">
-    <li id="link">Ghost Link</li>
-    <li id="link">Empty Link</li>
-    <li id="link">Dummy Link</li>
-  </ul>
-</footer>
-
-
+<%= render "shared/footer" %>
 
 <script>$(Cohabitate.initialize({
   questID: <%= current_user && current_user.quest ?  current_user.quest.id : 0 %>
