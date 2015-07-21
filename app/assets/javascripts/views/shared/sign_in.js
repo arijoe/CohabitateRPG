@@ -7,7 +7,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
 
   events: {
     "submit form": "submit",
-    "click #demo-user": "demoUser"
+    "click #guest-login": "guestLogin"
   },
 
   template: JST['shared/sign_in'],
@@ -40,7 +40,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     }
   },
 
-  demoUser: function (event) {
+  guestLogin: function (event) {
     event.preventDefault();
     Cohabitate.currentUser.signIn({
       email: "finn@ooo.com",
