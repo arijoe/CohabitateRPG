@@ -1,13 +1,17 @@
 Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   template: JST['list/show'],
 
+  tagName: "li",
+
+  className: "list",
+
   initialize: function (options) {
     this.list = options.list;
     // this.listenTo(this.collection, "sync add change remove reset", this.render);
   },
 
   events: {
-    
+
   },
 
   // lots of editing and viewing will be taking place here
