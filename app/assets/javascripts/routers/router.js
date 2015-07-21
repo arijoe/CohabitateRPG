@@ -16,7 +16,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-    debugger
     if (Cohabitate.currentUser.isSignedIn()) {
       var quest = Cohabitate.currentUser.quest();
       quest = Cohabitate.Collections.quests.getOrFetch(quest.id);

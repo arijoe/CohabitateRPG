@@ -3,6 +3,7 @@ Cohabitate.Views.Header = Backbone.View.extend({
   initialize: function(options){
     this.listenTo(Cohabitate.currentUser, "signIn signOut", this.render);
     this.render();
+    this.listenTo(Cohabitate.currentUser, "ari", this.customEvent);
   },
 
   events: {
@@ -16,6 +17,10 @@ Cohabitate.Views.Header = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  customEvent: function () {
+    console.log("I'm..... listening.")
   },
 
   signOut: function(event){
