@@ -16,8 +16,8 @@ Cohabitate.Views.QuestForm = Backbone.View.extend({
 
   render: function () {
     var html = this.template({
-      user: this.user,
-      quest: this.quest
+      quest: this.quest,
+      user: this.user
      });
 
     this.$el.html(html);
@@ -29,14 +29,12 @@ Cohabitate.Views.QuestForm = Backbone.View.extend({
 
     var that = this;
     var $form = $(event.currentTarget);
-    var userData = $form.serializeJSON().user;
+    var questData = $form.serializeJSON().user;
 
-    this.model.set(userData);
-    this.model.save({}, {
+    this.quest.save(questData, {
       success: function(){
-        Cohabitate.currentUser.fetch();
-        that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate( "",{ trigger: true });
+        that.user.add(that.model, { merge: true });
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   }
