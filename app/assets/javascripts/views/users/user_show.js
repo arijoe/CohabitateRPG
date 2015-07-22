@@ -10,12 +10,14 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   template: JST['users/show'],
 
   events: {
+    'click .user-modal-dismiss': 'dismiss',
     'click .user-modal-backdrop': 'dismiss'
   },
 
   dismiss: function (event) {
     event.preventDefault();
-    Backbone.history.navigate("", { trigger: true });
+    this.remove();
+    Backbone.history.navigate("");
   },
 
   render: function(){
