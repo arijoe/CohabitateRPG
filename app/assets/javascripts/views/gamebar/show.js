@@ -15,6 +15,14 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
     this.addSubview(".profile-display", view);
   },
 
+  renderMiddleDisplay: function () {
+
+  },
+
+  renderQuestLeader: function () {
+
+  },
+
   render: function () {
     var content = this.template({ quest: this.quest });
     this.$el.html(content);
