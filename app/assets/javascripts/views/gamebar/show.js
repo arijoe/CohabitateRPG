@@ -16,7 +16,11 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
   },
 
   renderMiddleDisplay: function () {
-
+    var view = new Cohabitate.Views.BarMiddle({
+      user: this.user,
+      quest: this.quest
+    });
+    this.addSubview(".quest-info", view);
   },
 
   renderQuestLeader: function () {
@@ -28,6 +32,7 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.renderProfileDisplay();
+    this.renderMiddleDisplay();
 
     return this;
   }

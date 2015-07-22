@@ -8,11 +8,7 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
     this.quest = options.quest
   },
 
-  // This view should:
-  // 1. Display user info automatically
-  // 2. Listen to click event on member info/user info
-  // 3. Render user info or member info depending on task
-  // 4. "swap view"
+  // Binary display toggle
 
   events: {
 
@@ -26,6 +22,8 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
   },
 
   render: function () {
-    // swap view
+    var content = this.template({ user: this.user, quest: this.quest });
+    this.$el.html(content);
+    return this;
   }
 });
