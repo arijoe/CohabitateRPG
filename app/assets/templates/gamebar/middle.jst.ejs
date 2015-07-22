@@ -7,7 +7,7 @@
 <div class="members-detail hide-detail">
   <ul id="quest-members-list">
     <% quest.members().each(function (member) { %>
-      <li id="quest-member">
+    <li id="quest-member">
       <a href="/#users/<%= member.id %>"><%= member.escape('username') %></a>
     </li>
     <% }) %>

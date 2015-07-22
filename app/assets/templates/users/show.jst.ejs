@@ -3,6 +3,7 @@
   <li><%= user.escape("username") %></li>
 </ul>
 
-<p>
+
+<% if (Cohabitate.currentUser.id === user.id) { %>
   <a href="#">Edit My Profile</a>
-</p>
+<% } %>
