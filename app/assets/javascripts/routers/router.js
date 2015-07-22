@@ -16,7 +16,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
-
     if (Cohabitate.currentUser.isSignedIn()) {
 
       var quest = Cohabitate.currentUser.quest();
@@ -40,6 +39,15 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questCreate: function () {
+    var newUser = Cohabitate.currentUser;
+    var newQuest = Cohabitate.currentUser.quest();
+
+    var formView = new Cohabitate.Views.QuestForm({
+      user: newUser,
+      quest: newQuest
+    });
+
+    this._swapView(formView);
   },
 
   questEdit: function () {

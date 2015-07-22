@@ -28,7 +28,7 @@ Cohabitate.Views.Header = Backbone.View.extend({
     Cohabitate.currentUser.signOut({
       success: function(){
         Cohabitate.Routers.router.questShow();
-        Backbone.history.navigate("");
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   }
