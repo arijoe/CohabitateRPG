@@ -13,14 +13,11 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
   // Binary display toggle
 
   events: {
-
+    "click #toggle": "toggleView"
   },
 
-  renderUserInfo: function () {
-
-  },
-
-  rendeMembersInfo: function () {
+  toggleView: function (event) {
+    event.preventDefault();
 
   },
 

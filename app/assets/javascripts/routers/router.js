@@ -74,7 +74,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     if (!this._requireSignedIn(callback)) { return; }
 
     var model = this.collection.getOrFetch(id);
-    var showView = new Cohabitate.Views.UsersShow({
+    var showView = new Cohabitate.Views.UserShow({
       model: model
     });
     this._swapView(showView, $('.quest-info'));
