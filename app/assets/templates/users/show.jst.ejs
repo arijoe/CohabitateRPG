@@ -11,12 +11,21 @@
       <li>Email: <%= user.escape("email") %></li>
     </ul>
 
+    <label>
+      Image
+      <input type="file" name="user[image]" id="input-user-image">
+    </label>
+
+    <br>
+
+    <img src="" id="preview-user-image" width="50">
+
     <% if (Cohabitate.currentUser.id === user.id) { %>
       <a href="#">Edit My Profile</a>
     <% } %>
 
     <a class="user-modal-dismiss">To the Quest!</a>
-    
+
   </div>
 
 </div>

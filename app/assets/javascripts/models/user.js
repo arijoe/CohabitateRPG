@@ -34,6 +34,28 @@ Cohabitate.Models.User = Backbone.Model.extend({
   toJSON: function(){
     var json = { user: _.clone(this.attributes) };
     return json;
+  },
+
+  saveFormData: function (formData, options) {
+    var method = this.isNew() ? "POST" : "PUT";
+    var that = this;
+
+    $.ajax({
+      url: _.result(that.model, "url"),
+      type: method,
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(resp){
+        that.model.set(model.parse(resp));
+        that.model.trigger('sync', that.model, resp, options);
+        that.collection.add(that.model);
+        options.success && options.success(that.model, respo, options);
+      },
+      error: function (resp) {
+        options.error && options.error(model, respo, options);
+      }
+    });
   }
 });
 

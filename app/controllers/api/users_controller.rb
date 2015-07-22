@@ -1,4 +1,6 @@
 class Api::UsersController < ApplicationController
+  wrap_parameters false
+
   def new
   end
 
@@ -37,6 +39,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :is_leader, :username, :password, :quest)
+    params.require(:user).permit(:email, :is_leader, :username, :password, :quest, :image)
   end
 end
