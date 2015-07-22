@@ -16,7 +16,12 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   dismiss: function (event) {
     event.preventDefault();
     this.remove();
-    Backbone.history.navigate("");
+
+    if (Cohabitate.currentUser.quest().isNew()) {
+      Backbone.history.navigate("/quests/new", { trigger: true });
+    } else {
+      Backbone.history.navigate("");
+    };
   },
 
   render: function(){

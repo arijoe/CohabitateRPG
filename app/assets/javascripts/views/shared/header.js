@@ -27,7 +27,8 @@ Cohabitate.Views.Header = Backbone.View.extend({
     event.preventDefault();
     Cohabitate.currentUser.signOut({
       success: function(){
-        Backbone.history.navigate("session/new", { trigger: true });
+        Cohabitate.Routers.router.questShow();
+        Backbone.history.navigate("");
       }
     });
   }

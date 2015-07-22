@@ -40,7 +40,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questCreate: function () {
-
   },
 
   questEdit: function () {
@@ -74,7 +73,11 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       model: model
     });
 
-    this.$rootEl.append(showView.render().$el);
+    if (Cohabitate.currentUser.quest().isNew()) {
+      this._swapView(showView);
+    } else {
+      this.$rootEl.append(showView.render().$el);
+    }
   },
 
   signIn: function(callback){

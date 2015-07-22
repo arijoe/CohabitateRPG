@@ -1,9 +1,4 @@
 Cohabitate.Views.UserForm = Backbone.View.extend({
-
-  initialize: function(options){
-    this.listenTo(this.model, "sync change", this.render);
-  },
-
   template: JST['users/form'],
 
   events: {
@@ -20,16 +15,15 @@ Cohabitate.Views.UserForm = Backbone.View.extend({
   submit: function(event){
     event.preventDefault();
 
+    var that = this;
     var $form = $(event.currentTarget);
     var userData = $form.serializeJSON().user;
-    var that = this;
 
     this.model.set(userData);
     this.model.save({}, {
       success: function(){
         Cohabitate.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
-        that.remove();
         Backbone.history.navigate(
           "/users/" + that.model.id,
           { trigger: true });
