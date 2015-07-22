@@ -216,6 +216,8 @@ navbar .logo:active {
   width: calc(15%);
 }
 
+/*BAR-MIDDLE*/
+
 .quest-info {
   position: relative;
   float: left;
@@ -227,34 +229,42 @@ navbar .logo:active {
   border-right: 1px solid #32cd32;
 }
 
-.quest-info:hover {
-  color: #5f9ea0;
+.user-detail {
+
 }
 
-.quest-name {
+.members-detail {
+  
+}
+
+/*USER DETAIL*/
+
+/*MEMBERS DETAIL*/
+
+#quest-name {
   position: absolute;
   bottom: 15px;
   left: 15px;
 }
 
-.quest-members {
+#quest-members {
   float: left;
   min-width: 149px;
   width: calc(15%);
   height: inherit;
 }
 
-.quest-members-list {
+#quest-members-list {
   margin-top: 10px auto;
   text-align: center;
 }
 
-.quest-members-list > li {
+#quest-members-list > li {
   float: left;
   padding: 5px;
 }
 
-.quest-member:hover {
+#quest-member:hover {
   color: #5f9ea0;
 }
 
