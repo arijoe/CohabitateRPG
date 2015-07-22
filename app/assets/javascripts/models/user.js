@@ -25,7 +25,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
 
   roomies: function () {
     if (!this._roomies) {
-      this._roomies = new Cohabitate.Collection.Members();
+      this._roomies = new Cohabitate.Collections.Members();
     }
 
     return this._roomies;
