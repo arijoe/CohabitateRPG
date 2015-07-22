@@ -29,6 +29,11 @@ gem 'annotate'
 # Create secure password tokens
 gem 'bcrypt'
 
+gem "paperclip", "~> 4.3"
+
+gem 'figaro'
+gem 'aws-sdk', '~> 1.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
