@@ -201,6 +201,16 @@ navbar .logo:active {
   background: #eee;
 }
 
+/*USER SHOW*/
+
+.user-modal-backdrop {
+
+}
+
+.user-attributes {
+  
+}
+
 /*MIDDLE BAR*/
 
 #game-bar {
@@ -214,6 +224,12 @@ navbar .logo:active {
   height: inherit;
   min-width: 149px;
   width: calc(15%);
+}
+
+/*MINI-PROFILE*/
+
+.mini-info {
+
 }
 
 /*BAR-MIDDLE*/
@@ -250,7 +266,15 @@ navbar .logo:active {
 
 /*USER DETAIL*/
 
+.user-detail {
+
+}
+
 /*MEMBERS DETAIL*/
+
+.members-detail {
+
+}
 
 #quest-name {
   position: absolute;
@@ -279,7 +303,11 @@ navbar .logo:active {
   color: #5f9ea0;
 }
 
-/*LIST VIEW*/
+/*LEADER INFO*/
+
+
+
+/*GAME-MAIN LIST VIEW*/
 
 .lists {
   margin: 0 auto;

@@ -1,14 +1,16 @@
-<ul class="user-attributes">
-  <li>Profile Picture Goes Here</li>
-  <li><%= user.escape("username") %></li>
-  <% if ( user.get("is_leader") ) { %>
-    <li>Quest Leader</li>
+<div class="user-modal-backdrop">
+  <ul class="user-attributes">
+    <li>Profile Picture Goes Here</li>
+    <li><%= user.escape("username") %></li>
+    <% if ( user.get("is_leader") ) { %>
+      <li>Quest Leader</li>
+    <% } %>
+    <li><%= user.escape("email") %></li>
+  </ul>
+
+  <% if (Cohabitate.currentUser.id === user.id) { %>
+    <a href="#">Edit My Profile</a>
   <% } %>
-  <li><%= user.escape("email") %></li>
-</ul>
 
-<% if (Cohabitate.currentUser.id === user.id) { %>
-  <a href="#">Edit My Profile</a>
-<% } %>
-
-<a href="">Back to Quest</a>
+  <a href="">Back to Quest</a>
+</div>
