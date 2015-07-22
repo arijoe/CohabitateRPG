@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates :password, {length: {minimum: 8, allow_nil: true}}
   validate :unique_within_quest
 
+  has_attached_file :image, styles: {medium: "200x200>", thumb: "52x52" }, default_url: "default.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   attr_reader :password
 
   after_initialize :ensure_session_token
