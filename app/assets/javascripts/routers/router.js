@@ -78,7 +78,6 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       model: model
     });
     this._swapView(showView, $('.quest-info'));
-    Backbone.history.navigate("");
   },
 
   signIn: function(callback){
