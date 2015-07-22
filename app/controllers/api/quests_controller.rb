@@ -12,12 +12,11 @@ class Api::QuestsController < ApplicationController
   end
 
   def show
-    @quest = current_quest
-
-    if @quest
+    if current_quest
+      @quest = current_quest
       render :show
     else
-      render :create
+      render json: ""
     end
   end
 
