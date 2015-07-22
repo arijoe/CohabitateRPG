@@ -13,12 +13,22 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
   // Binary display toggle
 
   events: {
-    "click #toggle": "toggleView"
+    "click #roomies": "toggleRoomies",
+    "click #user": "toggleUser"
   },
 
-  toggleView: function (event) {
+  toggleRoomies: function (event) {
     event.preventDefault();
 
+    this.$el.find('.members-detail').removeClass('hide-detail');
+    this.$el.find('.user-detail').addClass('hide-detail');
+  },
+
+  toggleUser: function (event) {
+    event.preventDefault();
+
+    this.$el.find('.user-detail').removeClass('hide-detail');
+    this.$el.find('.members-detail').addClass('hide-detail');
   },
 
   render: function () {

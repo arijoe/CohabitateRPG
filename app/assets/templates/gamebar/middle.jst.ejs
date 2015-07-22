@@ -1,8 +1,7 @@
-PLACEHOLDER
 <div class="user-detail">
   <div id="quest-name"><%= quest.escape('title') %></div>
   <%= user.escape('username') %>
-  <a id="toggle">Show Roomies</a>
+  <a class="toggle" id="roomies">Show Roomies</a>
 </div>
 
 <div class="members-detail hide-detail">
@@ -11,5 +10,5 @@ PLACEHOLDER
       <li id="quest-member"><%= member.escape('username') %></li>
     <% }) %>
   </ul>
-  <a id="toggle">Show My Info</a>
+  <a class="toggle" id="user">Show My Info</a>
 </div>
