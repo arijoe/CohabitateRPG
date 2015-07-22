@@ -16,7 +16,9 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   },
 
   questShow: function () {
+
     if (Cohabitate.currentUser.isSignedIn()) {
+
       var quest = Cohabitate.currentUser.quest();
       quest = Cohabitate.Collections.quests.getOrFetch(quest.id);
 
@@ -26,7 +28,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
           var showView = new Cohabitate.Views.QuestShow({
           model: quest,
           user: Cohabitate.currentUser
-         });
+        });
       }
     } else {
       var showView = new Cohabitate.Views.SignIn(
@@ -51,18 +53,11 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     this.$rootEl.html(view.render().$el);
   },
 
-
-
-
-
-
-
-
   userNew: function(){
     if (!this._requireSignedOut()) { return; }
 
     var model = new this.collection.model();
-    var formView = new Cohabitate.Views.UsersForm({
+    var formView = new Cohabitate.Views.UserForm({
       collection: this.collection,
       model: model
     });
@@ -88,6 +83,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var signInView = new Cohabitate.Views.SignIn({
       callback: callback
     });
+
     this._swapView(signInView);
   },
 

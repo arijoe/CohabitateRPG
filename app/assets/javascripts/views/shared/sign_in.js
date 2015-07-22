@@ -33,15 +33,16 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
     if(this.callback) {
       this.callback();
     } else {
-      Backbone.history.navigate("", { trigger: true });
+      Cohabitate.Routers.router.questShow();
     }
   },
 
   guestLogin: function (event) {
     event.preventDefault();
+
     Cohabitate.currentUser.signIn({
       email: "finn@ooo.com",
       password: "bubblegum"
-    })
+    });
   }
 });

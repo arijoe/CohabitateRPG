@@ -181,24 +181,24 @@ navbar .logo:active {
   float: right;
   margin: 15px 20px;
   padding: 10px 15px;
-  background: #eee;
+  background: rgba(238, 238, 238, 1);
 }
 
 .form > button:hover {
-  background: #32cd32;
+  background: rgba(50, 205, 50, 1);
   color: #eee;
 }
 
 .form > button#guest-login {
-  background: #32cd32;
+  background: rgba(50, 205, 50, 1);
 }
 
 .form > button#guest-login:active {
-  background: #eee;
+  background: rgba(238, 238, 238, 1);
 }
 
 .form > button:active {
-  background: #eee;
+  background: rgba(238, 238, 238, 1);
 }
 
 /*USER SHOW*/

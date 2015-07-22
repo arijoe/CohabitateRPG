@@ -29,7 +29,10 @@ Cohabitate.Views.UserForm = Backbone.View.extend({
       success: function(){
         Cohabitate.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("/quests/new", { trigger: true });
+        that.remove();
+        Backbone.history.navigate(
+          "/users/" + that.model.id,
+          { trigger: true });
       }
     });
   }

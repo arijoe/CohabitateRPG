@@ -9,10 +9,10 @@ window.Cohabitate = {
       success: function () {
         this.header = new Cohabitate.Views.Header({ el: "#top-bar" });
 
-        new Cohabitate.Routers.Router({
+        Cohabitate.Routers.router = new Cohabitate.Routers.Router({
           $rootEl: $("#root-el")
         });
-
+        
         Backbone.history.start();
       }
     });
