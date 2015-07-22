@@ -11,7 +11,7 @@ Cohabitate.Views.QuestForm = Backbone.View.extend({
   className: "quest-form",
 
   events: {
-    "submit form": "submit"
+    "submit quest-form-modal": "submit"
   },
 
   render: function () {
@@ -26,6 +26,7 @@ Cohabitate.Views.QuestForm = Backbone.View.extend({
 
   submit: function(event){
     event.preventDefault();
+    debugger
 
     var that = this;
     var $form = $(event.currentTarget);
