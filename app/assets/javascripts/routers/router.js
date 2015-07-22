@@ -66,6 +66,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       collection: this.collection,
       model: model
     });
+
     this._swapView(formView);
   },
 
@@ -77,7 +78,8 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     var showView = new Cohabitate.Views.UserShow({
       model: model
     });
-    this._swapView(showView, $('.quest-info'));
+
+    this.$rootEl.append(showView.render().$el);
   },
 
   signIn: function(callback){

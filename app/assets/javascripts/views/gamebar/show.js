@@ -11,7 +11,7 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
   },
 
   renderProfileDisplay: function () {
-    var view = new Cohabitate.Views.UserShow({ model: this.user });
+    var view = new Cohabitate.Views.MiniShow({ model: this.user });
     this.addSubview(".profile-display", view);
   },
 
@@ -24,7 +24,7 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
   },
 
   renderQuestLeader: function () {
-    
+
   },
 
   render: function () {
