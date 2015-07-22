@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720190412) do
+ActiveRecord::Schema.define(version: 20150722214750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,14 +60,18 @@ ActiveRecord::Schema.define(version: 20150720190412) do
   add_index "quests", ["leader_id"], name: "index_quests_on_leader_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                          null: false
-    t.boolean  "is_leader",       default: true, null: false
-    t.string   "password_digest",                null: false
+    t.string   "email",                             null: false
+    t.boolean  "is_leader",          default: true, null: false
+    t.string   "password_digest",                   null: false
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "leader_id"
     t.string   "username"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

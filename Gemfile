@@ -30,7 +30,6 @@ gem 'annotate'
 gem 'bcrypt'
 
 gem "paperclip", "~> 4.3"
-
 gem 'figaro'
 gem 'aws-sdk', '~> 1.6'
 
