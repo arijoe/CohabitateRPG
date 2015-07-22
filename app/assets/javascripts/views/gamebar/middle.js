@@ -3,6 +3,8 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
 
   tagName: 'div',
 
+  className: 'view-switch',
+
   initialize: function (options) {
     this.user = options.user,
     this.quest = options.quest
@@ -15,6 +17,7 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
   },
 
   renderUserInfo: function () {
+
   },
 
   rendeMembersInfo: function () {

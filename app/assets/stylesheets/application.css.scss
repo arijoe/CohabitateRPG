@@ -229,12 +229,14 @@ navbar .logo:active {
   border-right: 1px solid #32cd32;
 }
 
-.user-detail {
-
+.view-switch .hide-detail,
+.hide-detail {
+  display: none;
 }
 
-.members-detail {
-  
+.hide-detail,
+.view-switch .hide-detail {
+  display: none;
 }
 
 /*USER DETAIL*/
