@@ -2,11 +2,11 @@
   <div class="user-modal">
     <ul class="user-attributes">
       <li>Profile Picture Goes Here</li>
-      <li><%= user.escape("username") %></li>
+      <li>Username: <%= user.escape("username") %></li>
       <% if ( user.get("is_leader") ) { %>
         <li>Quest Leader</li>
       <% } %>
-      <li><%= user.escape("email") %></li>
+      <li>Email: <%= user.escape("email") %></li>
     </ul>
 
     <% if (Cohabitate.currentUser.id === user.id) { %>
