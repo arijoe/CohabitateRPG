@@ -3,12 +3,12 @@ Cohabitate.Models.Quest = Backbone.Model.extend ({
 
   parse: function (response) {
     if (response.members) {
-      this.members().set(response.members);
+      this.members().set(response.members, {parse: true });
       delete response.members;
     };
 
     if (response.lists) {
-      this.lists().set(response.lists);
+      this.lists().set(response.lists, { parse: true });
       delete response.lists;
     }
 

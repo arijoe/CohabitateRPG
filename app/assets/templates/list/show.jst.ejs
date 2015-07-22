@@ -2,6 +2,9 @@
 
 <ul class="items-list">
   <% items && items.each( function (item) { %>
-    <li class="item"><%= item.escape('label') %></li>
+    <ul class="item">
+      <li id="attr"><%= item.escape('label') %></li>
+      <li id="attr"><%= item.escape('points') %> Points</li>
+    </ul>
   <% }) %>
 </ul>
