@@ -2,7 +2,6 @@ Cohabitate.Models.List = Backbone.Model.extend ({
   urlRoot: "/api/lists",
 
   parse: function (response) {
-    console.log(response);
     if (response.items) {
       this.items().set(response.items);
       delete response.items;
