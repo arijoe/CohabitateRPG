@@ -23,6 +23,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
 
       if (quest.isNew()) {
         Backbone.history.navigate("/quests/new", { trigger: true });
+        return;
       } else {
           var showView = new Cohabitate.Views.QuestShow({
           model: quest,

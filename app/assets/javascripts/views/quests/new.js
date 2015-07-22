@@ -15,7 +15,6 @@ Cohabitate.Views.QuestForm = Backbone.View.extend({
   },
 
   render: function () {
-    debugger
     var html = this.template({
       user: this.user,
       quest: this.quest
