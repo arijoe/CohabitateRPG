@@ -41,8 +41,8 @@ class User < ActiveRecord::Base
     primary_key: :id
 
   has_many :completed_tasks,
-    class_name: "Items",
-    foreign_key: :user_id,
+    class_name: "Item",
+    foreign_key: :completer_id,
     primary_key: :id
 
   def self.assign_leader_id(user)
