@@ -1,4 +1,4 @@
-Cohabitate.Views.UsersShow = Backbone.View.extend({
+Cohabitate.Views.UserShow = Backbone.View.extend({
   tagName: 'div',
 
   className: 'user-info',
@@ -15,5 +15,4 @@ Cohabitate.Views.UsersShow = Backbone.View.extend({
 
     return this;
   }
-
 });

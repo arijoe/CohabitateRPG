@@ -1,4 +1,4 @@
-Cohabitate.Views.UsersForm = Backbone.View.extend({
+Cohabitate.Views.UserForm = Backbone.View.extend({
 
   initialize: function(options){
     this.listenTo(this.model, "sync change", this.render);
