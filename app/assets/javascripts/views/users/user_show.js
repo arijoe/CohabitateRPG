@@ -51,14 +51,14 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   update: function (event) {
     event.preventDefault();
 
-    debugger
+    var that = this;
+    var $form = $(event.target);
+    var userData = $form.serializeJSON().user;
 
-    var formData = new FormData(event.currentTarget);
-
-    this.model.saveFormData(formData, {
-      success: function(){
-        Backbone.history.navigate("", { trigger: true });
-      }
+    this.model.save(userData, {
+      success: (function () {
+        Backbone.history.navigate("/users/" + that.model.id, { trigger: true });
+      })
     });
   },
 
