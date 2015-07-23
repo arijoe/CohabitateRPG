@@ -14,6 +14,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
 
     if (response.completedTasks && response.completedTasks.length > 0) {
       this.completedTasks().set(response.completedTasks);
+      this.points();
       delete response.completedTasks;
     };
 
@@ -42,10 +43,6 @@ Cohabitate.Models.User = Backbone.Model.extend({
     }
 
     return this._completedTasks;
-  },
-
-  points = function () {
-
   },
 
   toJSON: function(){

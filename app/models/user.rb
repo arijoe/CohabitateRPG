@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
+  attr_accessor :points
 
   after_initialize :ensure_session_token
 
@@ -65,6 +66,12 @@ class User < ActiveRecord::Base
     end
 
     user
+  end
+
+  def points
+    points = 0
+    completed_tasks.each{ |task| points += task.points }
+    points
   end
 
   def self.find_by_credentials(email, password)

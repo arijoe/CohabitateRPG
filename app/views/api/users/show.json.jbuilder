@@ -14,6 +14,8 @@ end
 
 if @user.completed_tasks
   json.completed_tasks @user.completed_tasks do |task|
-    json.extract! task, :points
+    json.extract! task, :label, :points
   end
 end
+
+json.points @user.points
