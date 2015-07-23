@@ -11,3 +11,9 @@ if @user.roomies
     json.extract! roomie, :id, :email, :is_leader, :username
   end
 end
+
+if @user.completed_tasks
+  json.completed_tasks @user.completed_tasks do |task|
+    json.extract! task, :points
+  end
+end

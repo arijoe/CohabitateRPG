@@ -44,6 +44,10 @@ Cohabitate.Models.User = Backbone.Model.extend({
     return this._completedTasks;
   },
 
+  points = function () {
+
+  },
+
   toJSON: function(){
     var json = { user: _.clone(this.attributes) };
     return json;
