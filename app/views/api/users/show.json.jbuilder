@@ -18,4 +18,6 @@ if @user.completed_tasks
   end
 end
 
-json.points @user.points
+json.level @user.level
+
+json.xp @user.xp
