@@ -29,6 +29,10 @@ html, body, div, navbar, ul, li, h1, h2, img, button {
   background: transparent;
 }
 
+body {
+  min-height: 800px;
+}
+
 ul {
   list-style: none;
 }
@@ -146,12 +150,14 @@ navbar .logo:active {
 /*SIGN-IN*/
 
 .form {
+  position: relative;
   margin: 0 auto;
   width: 400px;
   color: #111;
   background: rgba(0, 80, 90, 0.5);
   opacity: 0.8;
   border: none;
+  height: 300px;
 }
 
 .form > h2 {
@@ -162,8 +168,11 @@ navbar .logo:active {
 }
 
 .form > label {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
   display: block;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .new-user label:hover {
@@ -171,15 +180,23 @@ navbar .logo:active {
 }
 
 .form > input {
+  text-align: center;
   border: 1px solid #ccc;
+  background: rgba(238, 238, 238, 1);
   padding: 5px;
-  margin: 5px 0px;
-  width: calc(100% - 10px);
+  margin: 10px 10px;
+  width: calc(100% - 30px);
+}
+
+.form > input:focus {
+  box-shadow: 0 0 5px #32cd32;
+  border: 1px solid #32cd32;
 }
 
 .form > button {
-  float: right;
-  margin: 15px 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
   padding: 10px 15px;
   background: rgba(238, 238, 238, 1);
 }
@@ -189,15 +206,18 @@ navbar .logo:active {
   color: #eee;
 }
 
-.form > button#guest-login {
+.form > #special {
+  left: 20px;
+  bottom: 20px;
   background: rgba(50, 205, 50, 1);
 }
 
-.form > button#guest-login:active {
+.form > #special:active {
   background: rgba(238, 238, 238, 1);
 }
 
 .form > button:active {
+  color: black;
   background: rgba(238, 238, 238, 1);
 }
 
@@ -408,8 +428,8 @@ p.info {
   height: auto;
   padding: 25px calc(15% - 20px);
   position: absolute;
-  bottom: calc(20% - 15px);
-  z-index: -1;
+  top: 400px;
+  font-size: 16px;
   border-top: 1px solid #32cd32;
   border-bottom: 1px solid #32cd32;
 }

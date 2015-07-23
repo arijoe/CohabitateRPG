@@ -1,22 +1,17 @@
 <form class="form group">
   <h2>Sign Up</h2>
 
-  <label>
-    Email
-    <input type="email" name="user[email]"
-           value="<%= user.escape("email") %>">
-  </label>
+  <label>Email</label>
+  <input type="email" name="user[email]"
+    value="<%= user.escape("email") %>">
 
 
-  <label>
-    Password
-    <input type="password" name="user[password]"
-           value="<%= user.escape("password") %>">
-  </label>
 
-  <a href="#" class="existing-join">Joining an existing quest? Click here!</a>
+  <label>Password</label>
+  <input type="password" name="user[password]"
+    value="<%= user.escape("password") %>">
 
-
+  <button href="#" id="special">Join existing quest</button>
   <button>Create Account</button>
 
 </form>
