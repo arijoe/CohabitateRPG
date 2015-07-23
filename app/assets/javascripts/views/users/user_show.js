@@ -39,8 +39,8 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
 
         if ( $(event.target).attr('id') === editable.attr('id') &&
         $(event.target).attr('id') === field.attr('id')) {
-          var label = field.attr('id')
-          var userVar = Cohabitate.currentUser.escape(label)
+          var label = field.attr('id');
+          var userVar = Cohabitate.currentUser.escape(label);
 
           field.html('<form><label>' + label + '</label><input type="' + label + '"name="user[' + label + ']"value="' + userVar + '"><button>Update</button></form>')
         };

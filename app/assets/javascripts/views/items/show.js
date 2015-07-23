@@ -2,7 +2,7 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   template: JST['items/show'],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync change", this.render)
+    this.listenTo(this.collection, "sync change add", this.render)
   },
 
   events: {
