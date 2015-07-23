@@ -7,7 +7,7 @@
 
       <li id="username">Username: <%= user.escape("username") %>
         <% if (Cohabitate.currentUser.id === user.id) { %>
-          <a class="edit" id="username" href="#">Edit</a>
+          <a class="edit" id="username">Edit</a>
         <% } %>
       </li>
 
@@ -17,7 +17,7 @@
 
       <li id="email">Email: <%= user.escape("email") %>
       <% if (Cohabitate.currentUser.id === user.id) { %>
-        <a class="edit" id="email" href="#">Edit</a>
+        <a class="edit" id="email">Edit</a>
       <% } %>
     </li>
     </ul>

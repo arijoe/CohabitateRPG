@@ -11,7 +11,8 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
 
   events: {
     'click .user-modal-dismiss': 'dismiss',
-    'click .user-modal-backdrop': 'dismiss'
+    'click .edit': 'showField',
+    'submit form': 'update'
   },
 
   dismiss: function (event) {
@@ -25,12 +26,54 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
     };
   },
 
+  showField: function (event) {
+    event.preventDefault();
+
+    var editables = this.$el.find('.edit')
+    var fields = this.$el.find('li')
+
+    editables.each( function (idx) {
+      fields.each( function (jdx) {
+        var editable = $(editables[idx]);
+        var field = $(fields[jdx]);
+
+        if ( $(event.target).attr('id') === editable.attr('id') &&
+        $(event.target).attr('id') === field.attr('id')) {
+          var label = field.attr('id')
+          var userVar = Cohabitate.currentUser.escape(label)
+
+          field.html('<form><label>' + label + '</label><input type="' + label + '"name="user[' + label + ']"value="' + userVar + '"><button>Update</button></form>')
+        };
+      });
+    });
+  },
+
+  update: function (event) {
+    event.preventDefault();
+
+    var that = this;
+    var $form = $(event.currentTarget);
+    var userData = $form.serializeJSON().user;
+
+    this.model.set(userData);
+    this.model.save({}, {
+      success: function(){
+        Cohabitate.currentUser.fetch();
+        that.collection.add(that.model, { merge: true });
+        Backbone.history.navigate(
+          "/users/" + that.model.id,
+          { trigger: true });
+      }
+    });
+  }
+
   render: function(){
     var html = this.template({ user: this.model });
     this.$el.html(html);
-    debugger
     return this;
   },
+
+
 
   fileInputChange: function(event){
     console.log(event.currentTarget.files[0]);
