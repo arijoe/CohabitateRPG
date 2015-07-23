@@ -12,6 +12,11 @@ Cohabitate.Models.User = Backbone.Model.extend({
       delete response.roomies;
     };
 
+    if (response.completedTasks && response.completedTasks.length > 0) {
+      this.completedTasks().set(response.completedTasks);
+      delete response.completedTasks;
+    };
+
     return response;
   },
 
@@ -29,6 +34,14 @@ Cohabitate.Models.User = Backbone.Model.extend({
     }
 
     return this._roomies;
+  },
+
+  completedTasks = function () {
+    if (!this._completedTasks) {
+      this._completedTasks = new Cohabitate.Collections.Items([]);
+    }
+
+    return this._completedTasks;
   },
 
   toJSON: function(){

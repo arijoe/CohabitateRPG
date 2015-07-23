@@ -2,7 +2,8 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   template: JST['items/show'],
 
   events: {
-    "click .attr": "toggleDescription"
+    "click .attr": "toggleDescription",
+    "click #completed": "completeTask"
   },
 
   toggleDescription: function (event) {
@@ -16,6 +17,12 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
         desc.hasClass('hidden') ? desc.removeClass('hidden') : desc.addClass('hidden');
       };
     });
+  },
+
+  completeTask: function (event) {
+    event.preventDefault();
+
+    console.log('doing stuff now');
   },
 
   render: function () {

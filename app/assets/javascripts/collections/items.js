@@ -4,6 +4,6 @@ Cohabitate.Collections.Items = Backbone.Collection.extend({
   url: "/api/items",
 
   initialize: function (models, options) {
-    this.list = options.list
+    this.list = options.list || {}
   }
 })
