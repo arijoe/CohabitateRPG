@@ -354,6 +354,11 @@ navbar .logo:active {
   color: #555;
 }
 
+
+.item > .hidden {
+  display: none;
+}
+
 /*SPLASH PAGE*/
 
 p.info {
