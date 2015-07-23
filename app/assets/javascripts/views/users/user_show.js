@@ -68,12 +68,16 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
 
   updateImage: function (event) {
     event.preventDefault();
-    
+
+    var that = this;
+    var file = this.$("#input-user-image")[0].files[0];
+    var formData = new FormData()
+    formData.append("user[image]", file);
+
+    this.model.saveFormData(formData);
   },
 
   fileInputChange: function(event){
-    console.log(event.currentTarget.files[0]);
-
     var that = this;
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
@@ -90,7 +94,6 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   },
 
   _updatePreview: function(src){
-    console.log(this.$el.find("#preview-user-image"))
     this.$el.find("#preview-user-image").attr("src", src);
   }
 });

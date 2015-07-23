@@ -45,36 +45,36 @@ Cohabitate.Models.User = Backbone.Model.extend({
     return this._completedTasks;
   },
 
-  toJSON: function(){
+  toJSON: function () {
     var json = { user: _.clone(this.attributes) };
     return json;
   },
 
   saveFormData: function (formData, options) {
-    var method = this.isNew() ? "POST" : "PUT";
-    var that = this;
+    var method = "PUT";
+    var model = this;
+
+    debugger
 
     $.ajax({
-      url: _.result(that.model, "url"),
+      url: "api/users/" + model.id,
       type: method,
       data: formData,
       processData: false,
       contentType: false,
       success: function(resp){
-        that.model.set(model.parse(resp));
-        that.model.trigger('sync', that.model, resp, options);
-        that.collection.add(that.model);
-        options.success && options.success(that.model, respo, options);
+        model.set(model.parse(resp));
+        model.trigger('sync', model, resp, options);
+        options && options.success && options.success(model, resp, options);
       },
       error: function (resp) {
-        options.error && options.error(model, respo, options);
+        options && options.error && options.error(model, resp, options);
       }
     });
   }
 });
 
 Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
-
   url: "/api/session",
 
   initialize: function(options){
