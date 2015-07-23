@@ -53,16 +53,14 @@ Cohabitate.Models.User = Backbone.Model.extend({
   saveFormData: function (formData, options) {
     var method = "PUT";
     var model = this;
-
-    debugger
-
+    
     $.ajax({
       url: "api/users/" + model.id,
       type: method,
       data: formData,
       processData: false,
       contentType: false,
-      success: function(resp){
+      success: function (resp) {
         model.set(model.parse(resp));
         model.trigger('sync', model, resp, options);
         options && options.success && options.success(model, resp, options);

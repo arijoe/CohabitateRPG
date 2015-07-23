@@ -1,13 +1,15 @@
 <div class="user-modal-backdrop">
 
-  <div class="user-modal">
+  <div class="user-modal group">
 
     <ul class="user-attributes">
-      <li id="picture">Profile Picture Goes Here</li>
+      <li id="picture-container">
+        <img class="image-full" src="<%= Cohabitate.currentUser.escape('image_url') %>" id="full-user-image">
+      </li>
 
-      <li id="username">Username: <%= user.escape("username") %>
+      <li id="username"><%= user.escape("username") %>
         <% if (Cohabitate.currentUser.id === user.id) { %>
-          <a class="edit" id="username">Edit</a>
+          <a class="edit" id="username">✎</a>
         <% } %>
       </li>
 
@@ -17,7 +19,7 @@
 
       <li id="email">Email: <%= user.escape("email") %>
       <% if (Cohabitate.currentUser.id === user.id) { %>
-        <a class="edit" id="email">Edit</a>
+        <a class="edit" id="email">✎</a>
       <% } %>
     </li>
     </ul>
