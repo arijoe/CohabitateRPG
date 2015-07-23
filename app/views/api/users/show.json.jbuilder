@@ -1,7 +1,5 @@
 json.partial! "api/users/user", user: @user
 
-json.points @user.points
-json.level @user.level
 json.xp @user.xp
 
 if @user.quest

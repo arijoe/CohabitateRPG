@@ -2,6 +2,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
   parse: function (response) {
+    console.log(response)
     if (response.quest) {
       this.quest().set(response.quest);
       delete response.quest;
@@ -53,7 +54,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
   saveFormData: function (formData, options) {
     var method = "PUT";
     var model = this;
-    
+
     $.ajax({
       url: "api/users/" + model.id,
       type: method,

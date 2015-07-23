@@ -53,7 +53,6 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   update: function (event) {
     event.preventDefault();
 
-    var that = this;
     var $form = $(event.target);
     var userData = $form.serializeJSON().user;
 

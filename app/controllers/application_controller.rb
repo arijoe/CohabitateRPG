@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_leader
-    if !current_user.is_leader!
+    if !current_user.is_leader
       render json: ["Only your quest leader can do that."], status: :unauthorized
     end
   end
