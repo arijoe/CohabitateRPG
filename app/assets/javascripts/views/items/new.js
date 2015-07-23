@@ -5,8 +5,15 @@ Cohabitate.Views.ItemNew = Backbone.View.extend({
 
   className: "item new group",
 
+  initialize: function (options) {
+    this.list = options.list
+  },
+
   render: function () {
-    this.$el.html( this.template({ item: this.model }) )
+    this.$el.html( this.template({
+      item: this.model,
+      list: this.list
+     }) )
     return this;
   }
 });
