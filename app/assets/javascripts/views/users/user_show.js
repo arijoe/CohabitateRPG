@@ -12,7 +12,9 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   events: {
     'click .user-modal-dismiss': 'dismiss',
     'click .edit': 'showField',
-    'submit form': 'update'
+    'submit .attr-form': 'update',
+    "change #input-user-image": "fileInputChange",
+    'submit .image-form': 'updateImage'
   },
 
   dismiss: function (event) {
@@ -42,7 +44,7 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
           var label = field.attr('id');
           var userVar = Cohabitate.currentUser.escape(label);
 
-          field.html('<form><label>' + label + '</label><input type="' + label + '"name="user[' + label + ']"value="' + userVar + '"><button>Update</button></form>')
+          field.html('<form class="attr-form"><label>' + label + '</label><input type="' + label + '"name="user[' + label + ']"value="' + userVar + '"><button>Update</button></form>')
         };
       });
     });
@@ -64,7 +66,10 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
     return this;
   },
 
-
+  updateImage: function (event) {
+    event.preventDefault();
+    
+  },
 
   fileInputChange: function(event){
     console.log(event.currentTarget.files[0]);
@@ -85,6 +90,7 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   },
 
   _updatePreview: function(src){
-    this.$el.find("#preview-post-image").attr("src", src);
+    console.log(this.$el.find("#preview-user-image"))
+    this.$el.find("#preview-user-image").attr("src", src);
   }
 });

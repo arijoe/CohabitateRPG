@@ -23,10 +23,13 @@
     </ul>
 
     <% if (Cohabitate.currentUser.id === user.id) { %>
-      <label>Image</label>
-      <input for="Image" type="file" name="user[image]" id="input-user-image">
+      <form class="image-form">
+        <label>Change Image</label>
+        <input for="Change Image" type="file" name="user[image]" id="input-user-image">
+        <img class="image-preview" src="<%= Cohabitate.currentUser.escape('image_url') %>" id="preview-user-image">
 
-      <img src="" id="preview-user-image" width="50">
+        <button>Update</button>
+      </form>
     <% } %>
 
 
