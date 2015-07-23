@@ -8,8 +8,14 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   toggleDescription: function (event) {
     event.preventDefault();
 
-    var desc = this.$el.find('.description')
-    desc.hasClass('hidden') ? desc.removeClass('hidden') : desc.addClass('hidden');
+    var descriptions = this.$el.find('.description')
+
+    descriptions.each( function (idx) {
+      var desc = $(descriptions[idx]);
+      if ( $(event.target).attr('data') === desc.attr('data') ) {
+        desc.hasClass('hidden') ? desc.removeClass('hidden') : desc.addClass('hidden');
+      };
+    });
   },
 
   render: function () {
