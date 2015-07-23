@@ -2,8 +2,12 @@
   <div class="item group">
 
     <ul class="attr">
-      <li id="label" data="<%= item.id %>"><%= item.escape('label') %></li>
-      <li id="points" data="<%= item.id %>"><%= item.escape('points') %> Points</li>
+      <li id="label" data="<%= item.id %>">
+        <%= item.escape('label') %>
+      </li>
+      <li id="points" data="<%= item.id %>">
+        <%= item.escape('points') %> Points
+      </li>
       <li id="completed">▢</li>
     </ul>
 
@@ -12,6 +16,12 @@
         <li>Due: <%= item.escape('duedate') %></li>
       <% } %>
       <li><%= item.escape('description') %></li>
+      <li>
+        <% if (Cohabitate.currentUser.escape('is_leader') === "true") { %>
+          <a href="#">Remove Task</a>
+          <a href="#">Edit Task</a>
+        <% } %>
+      </li>
     </ul>
   </div>
 <% }) %>
