@@ -402,17 +402,17 @@ navbar .logo:active {
   cursor: pointer;
 }
 
-li#label, li#points {
+li.label, li.points {
   display: block;
 }
 
-li#points {
+li.points {
   font-style: italic;
   font-size: 14px;
   margin: 3px 2px;
 }
 
-li#completed {
+li.complete {
   position: absolute;
   right: 5px;
   top: 5px;
@@ -423,7 +423,11 @@ li#completed {
   cursor: pointer;
 }
 
-.item > .hidden {
+li.complete .check {
+  cursor: default;
+}
+
+.hidden {
   display: none;
 }
 

@@ -2,13 +2,18 @@
   <div class="item group">
 
     <ul class="item-details">
-      <li class="attr" id="label" data="<%= item.id %>">
+      <li class="attr label" data="<%= item.id %>">
         <%= item.escape('label') %>
       </li>
-      <li class="attr" id="points" data="<%= item.id %>">
+      <li class="attr points" data="<%= item.id %>">
         <%= item.escape('points') %> Points
       </li>
-      <li id="completed" data="<%= item.id %>">▢</li>
+      <li class="complete <%= item.isCompleted() ? 'hidden' : '' %>" data="<%= item.id %>">
+        ▢
+      </li>
+        <% if (item.isCompleted()) { %>
+          <li class="complete check">✓</li>
+        <% } %>
     </ul>
 
     <ul class="description hidden" data="<%= item.id %>">

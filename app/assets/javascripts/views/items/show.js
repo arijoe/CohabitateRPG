@@ -7,7 +7,7 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
 
   events: {
     "click .attr": "toggleDescription",
-    "click #completed": "completeTask"
+    "click .complete": "completeTask"
   },
 
   toggleDescription: function (event) {
@@ -26,12 +26,11 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   completeTask: function (event) {
     event.preventDefault();
 
-    var taskID = $(event.target).attr('data') * 1;
-    var task = this.collection.where({ id: taskID });
+    var taskID = $(event.target).attr('data');
+    var task = this.collection.get(taskID);
 
     Cohabitate.currentUser.completedTasks().add(task);
-    debugger
-    Cohabitate.currentUser.save();
+    task.save({completer_id: Cohabitate.currentUser.id});
   },
 
   render: function () {
