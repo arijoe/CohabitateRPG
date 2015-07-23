@@ -108,6 +108,12 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
     });
   },
 
+  save: function (attributes, options) {
+    options = options || {};
+    options.url = "/api/users/" + this.id;
+    Backbone.Model.prototype.save.call(this, attributes, options);
+  },
+
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signIn");
@@ -115,5 +121,4 @@ Cohabitate.Models.CurrentUser = Cohabitate.Models.User.extend({
       this.trigger("signOut");
     }
   }
-
 })

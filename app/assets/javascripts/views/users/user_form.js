@@ -25,7 +25,7 @@ Cohabitate.Views.UserForm = Backbone.View.extend({
         Cohabitate.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate(
-          "/users/" + that.model.id,
+          "profile",
           { trigger: true });
       }
     });

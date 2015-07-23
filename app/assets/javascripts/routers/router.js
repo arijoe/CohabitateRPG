@@ -8,11 +8,12 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
   routes: {
     "": "questShow",
     "quest": "questShow",
+    "profile": "profile",
     "users/new": "userNew",
     "quests/new": "questCreate",
     "quests/edit": "questEdit",
     "users/:id": "userShow",
-    "session/new": "signIn"
+    "session/new": "signIn",
   },
 
   questShow: function () {
@@ -73,7 +74,7 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
     this._swapView(formView);
   },
 
-  userShow: function(id){
+  userShow: function (id) {
     var callback = this.userShow.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
 
@@ -82,11 +83,23 @@ Cohabitate.Routers.Router = Backbone.Router.extend ({
       model: model
     });
 
+    this.$rootEl.append(showView.render().$el);
+  },
+
+  profile: function () {
+    var callback = this.profile.bind(this);
+    if (!this._requireSignedIn(callback)) { return; }
+
+    var model = Cohabitate.currentUser;
+    var showView = new Cohabitate.Views.UserShow({
+      model: model
+    });
+
     if (Cohabitate.currentUser.quest().isNew()) {
       this._swapView(showView);
     } else {
       this.$rootEl.append(showView.render().$el);
-    }
+    };
   },
 
   signIn: function(callback){

@@ -3,7 +3,7 @@
 <% if(Cohabitate.currentUser.isSignedIn()) { %>
 
   <span class="right-links session-links">
-    <a href="#users/<%= Cohabitate.currentUser.id %>"><%= Cohabitate.currentUser.escape("username") %></a>
+    <a href="#profile"><%= Cohabitate.currentUser.escape("username") %></a>
     <a href="#" id="sign-out-link">Sign Out</a>
   </span>
 
