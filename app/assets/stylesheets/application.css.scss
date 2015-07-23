@@ -325,8 +325,6 @@ navbar .logo:active {
   height: calc(75%);
 }
 
-
-
 /*BAR-MIDDLE*/
 
 .quest-info {
@@ -475,6 +473,34 @@ li.complete .check {
 
 .hidden {
   display: none;
+}
+
+/*ITEM FORM*/
+
+.item-form {
+  position: relative;
+}
+
+.item-form > label {
+  display: block;
+}
+
+.item-form > input {
+  margin: 10px;
+}
+
+.item-form > button {
+  background: #32cd32;
+}
+
+a.cancel {
+  padding: 5px;
+  background: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /*SPLASH PAGE*/
