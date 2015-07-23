@@ -1,6 +1,10 @@
 Cohabitate.Views.ItemsShow = Backbone.View.extend({
   template: JST['items/show'],
 
+  initialize: function () {
+    this.listenTo(this.collection, "sync change", this.render)
+  },
+
   events: {
     "click .attr": "toggleDescription",
     "click #completed": "completeTask"
@@ -22,7 +26,12 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   completeTask: function (event) {
     event.preventDefault();
 
-    console.log('doing stuff now');
+    var taskID = $(event.target).attr('data') * 1;
+    var task = this.collection.where({ id: taskID });
+
+    Cohabitate.currentUser.completedTasks().add(task);
+
+    debugger
   },
 
   render: function () {

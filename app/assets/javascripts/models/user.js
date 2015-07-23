@@ -37,7 +37,7 @@ Cohabitate.Models.User = Backbone.Model.extend({
     return this._roomies;
   },
 
-  completedTasks = function () {
+  completedTasks: function () {
     if (!this._completedTasks) {
       this._completedTasks = new Cohabitate.Collections.Items([]);
     }

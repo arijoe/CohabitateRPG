@@ -1,6 +1,10 @@
 <div class="user-detail">
   <div id="quest-name"><%= quest.escape('title') %></div>
-  <%= user.escape('username') %>
+    <ul class="user-detail">
+      <li id="username"><%= user.escape('username') %></li>
+      <li id="level">Level: <%= user.escape('level') %></li>
+      <li id="xp">XP: <%= user.escape('xp') %></li>
+    </ul>
   <a class="toggle" id="roomies">Show Roomies</a>
 </div>
 

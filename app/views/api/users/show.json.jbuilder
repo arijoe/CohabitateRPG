@@ -1,5 +1,9 @@
 json.partial! "api/users/user", user: @user
 
+json.points @user.points
+json.level @user.level
+json.xp @user.xp
+
 if @user.quest
   json.quest do
     json.extract! @user.quest, :id, :title, :leader_id, :created_at, :updated_at
@@ -17,7 +21,3 @@ if @user.completed_tasks
     json.extract! task, :label, :points
   end
 end
-
-json.level @user.level
-
-json.xp @user.xp
