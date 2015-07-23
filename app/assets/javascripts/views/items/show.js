@@ -25,6 +25,7 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
 
   completeTask: function (event) {
     event.preventDefault();
+    if ($(event.target).hasClass('check')) { return; };
 
     var taskID = $(event.target).attr('data');
     var task = this.collection.get(taskID);
