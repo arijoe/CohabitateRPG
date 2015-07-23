@@ -27,7 +27,7 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   render: function(){
     var html = this.template({ user: this.model });
     this.$el.html(html);
-
+    debugger
     return this;
   }
 });

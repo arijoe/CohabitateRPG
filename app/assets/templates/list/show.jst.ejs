@@ -5,6 +5,12 @@
     <ul class="item">
       <li id="attr"><%= item.escape('label') %></li>
       <li id="attr"><%= item.escape('points') %> Points</li>
+      <li id="completed">▢</li>
     </ul>
+    <div class="description"><%= item.escape('description') %></div>
   <% }) %>
 </ul>
+
+<% if (Cohabitate.currentUser.escape('is_leader') === "true") { %>
+  <a href="#">Create new item</a>
+<% } %>

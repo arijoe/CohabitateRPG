@@ -22,7 +22,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
       items: this.items,
       list: this.list
     });
-
+  
     this.$el.html(content);
     return this;
   }
