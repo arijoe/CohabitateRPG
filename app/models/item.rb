@@ -14,7 +14,7 @@ class Item < ActiveRecord::Base
 
   belongs_to :completer,
     class_name: "User",
-    foreign_key: :user_id,
+    foreign_key: :completer_id,
     primary_key: :id
 
     private
