@@ -1,10 +1,10 @@
 <ul class="user-attributes">
   <li>
-    <li id="picture-container">
+    <div id="picture-container">
       <img class="profile-picture" src="<%= Cohabitate.currentUser.escape('image_url') %>" id="user-profile-image">
-    </li>
+    <div>
   </li>
-  <li><%= user.escape("username") %></li>
-  <li><a href="#profile">My Profile</a>
+  <li>
+    <a href="#profile"><%= user.escape("username") %></a>
   </li>
 </ul>

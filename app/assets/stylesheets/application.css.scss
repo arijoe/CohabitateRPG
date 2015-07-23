@@ -273,11 +273,15 @@ navbar .logo:active {
   margin-top: 20px;
 }
 
+#picture-container {
+  height: 150px;
+  width: 150px;
+}
+
 .image-full {
   height: 150px;
   width: 150px;
   border: 1px solid #5f9ea0;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -299,16 +303,29 @@ navbar .logo:active {
 
 .profile-display {
   float: left;
-  height: inherit;
+  height: 135px;
   min-width: 149px;
   width: calc(15%);
 }
 
 /*MINI-PROFILE*/
 
-.mini-info {
-
+.user-attributes > li {
+  margin: 0 0 5px 0;
 }
+
+.user-attributes > li > a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#picture-container {
+  margin: 0 auto;
+  width: 100px;
+  height: calc(75%);
+}
+
+
 
 /*BAR-MIDDLE*/
 

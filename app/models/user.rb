@@ -9,9 +9,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
-  attr_accessor :points
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :xp, :level
 
   has_many :followers,
     class_name: "User",
@@ -79,7 +78,8 @@ class User < ActiveRecord::Base
   end
 
   def xp
-    points % 50
+    divisor = 50 + (level - 1) * 5
+    points % divisor
   end
 
   def self.find_by_credentials(email, password)
