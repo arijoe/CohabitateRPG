@@ -2,7 +2,7 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
   template: JST['items/show'],
 
   events: {
-    "click #attr": "toggleDescription"
+    "click .attr": "toggleDescription"
   },
 
   toggleDescription: function (event) {

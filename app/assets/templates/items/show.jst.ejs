@@ -1,8 +1,12 @@
 <% items && items.each( function (item) { %>
-  <ul class="item">
-    <li id="attr" data="<%= item.id %>"><%= item.escape('label') %></li>
-    <li id="attr" data="<%= item.id %>"><%= item.escape('points') %> Points</li>
-    <li id="completed">▢</li>
+  <div class="item group">
+
+    <ul class="attr">
+      <li id="label" data="<%= item.id %>"><%= item.escape('label') %></li>
+      <li id="points" data="<%= item.id %>"><%= item.escape('points') %> Points</li>
+      <li id="completed">▢</li>
+    </ul>
+
     <div class="description hidden" data="<%= item.id %>"><%= item.escape('description') %></div>
-  </ul>
+  </div>
 <% }) %>

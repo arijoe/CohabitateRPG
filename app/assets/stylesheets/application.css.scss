@@ -344,7 +344,6 @@ navbar .logo:active {
   margin: 5px 5px;
   border: 1px solid #32cd32;
   background: #fff;
-  min-height: 320px;
   min-width: 45px;
   width: 22%;
 }
@@ -354,6 +353,49 @@ navbar .logo:active {
   color: #555;
 }
 
+.list > a {
+  float: right;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.items-list {
+  margin: 15px 10px;
+}
+
+/*ITEMS*/
+
+.item {
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #000;
+}
+
+.attr {
+  display: block;
+  position: relative;
+}
+
+li#label, li#points {
+  display: block;
+}
+
+li#points {
+  font-style: italic;
+  font-size: 14px;
+  margin: 3px 2px;
+}
+
+li#completed {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 0 4px;
+  color: #555;
+  background: #eee;
+  border-radius: 2px;
+  cursor: pointer;
+}
 
 .item > .hidden {
   display: none;
