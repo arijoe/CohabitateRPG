@@ -10,7 +10,8 @@ Cohabitate.Views.UserShow = Backbone.View.extend({
   template: JST['users/show'],
 
   events: {
-    'click .user-modal-dismiss': 'dismiss'
+    'click .user-modal-dismiss': 'dismiss',
+    'click .user-modal-backdrop': 'dismiss'
   },
 
   dismiss: function (event) {
