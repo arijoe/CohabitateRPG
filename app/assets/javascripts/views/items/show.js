@@ -30,8 +30,6 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
     var task = this.collection.where({ id: taskID });
 
     Cohabitate.currentUser.completedTasks().add(task);
-
-    debugger
   },
 
   render: function () {

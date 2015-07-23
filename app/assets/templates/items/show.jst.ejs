@@ -1,11 +1,11 @@
 <% items && items.each( function (item) { %>
   <div class="item group">
 
-    <ul class="attr">
-      <li id="label" data="<%= item.id %>">
+    <ul class="item-details">
+      <li class="attr" id="label" data="<%= item.id %>">
         <%= item.escape('label') %>
       </li>
-      <li id="points" data="<%= item.id %>">
+      <li class="attr" id="points" data="<%= item.id %>">
         <%= item.escape('points') %> Points
       </li>
       <li id="completed" data="<%= item.id %>">▢</li>
