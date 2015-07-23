@@ -7,7 +7,7 @@ Cohabitate.Views.SignIn = Backbone.View.extend({
 
   events: {
     "submit form": "submit",
-    "click #guest-login": "guestLogin"
+    "click #special": "guestLogin"
   },
 
   template: JST['shared/sign_in'],
