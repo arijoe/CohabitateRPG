@@ -7,6 +7,11 @@
       <li id="completed">▢</li>
     </ul>
 
-    <div class="description hidden" data="<%= item.id %>"><%= item.escape('description') %></div>
+    <ul class="description hidden" data="<%= item.id %>">
+      <% if (item.escape('duedate')) { %>
+        <li>Due: <%= item.escape('duedate') %></li>
+      <% } %>
+      <li><%= item.escape('description') %></li>
+    </ul>
   </div>
 <% }) %>
