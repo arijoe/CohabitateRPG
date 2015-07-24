@@ -67,6 +67,22 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.find_or_create_by_auth_hash(auth_hash)
+    user = User.find_by(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid])
+
+    unless user
+      user = User.create!(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid],
+            username: auth_hash[:info][:name],
+            email: auth_hash[:info][:email],
+            password: SecureRandom::urlsafe_base64
+          )
+    end
+  end
+
   def points
     points = 0
     completed_tasks.each{ |task| points += task.points }
