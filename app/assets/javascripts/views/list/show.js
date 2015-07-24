@@ -44,7 +44,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
     newItem.save(formData, {
       success: function () {
         that.removeForm(event);
-        view.render();
+        that.list.fetch();
       }
     });
   },

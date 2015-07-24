@@ -650,6 +650,10 @@ div.username:hover {
   border: 1px solid #000;
 }
 
+.item .description > li {
+  margin: 10px 0;
+}
+
 .item .complete-task {
   background: #ccc;
 }
