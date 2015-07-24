@@ -32,6 +32,10 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
     this.$el.find('.members-detail').addClass('hide-detail');
   },
 
+  updateUser: function () {
+    this.user.fetch();
+  },
+
   render: function () {
     var content = this.template({ user: this.user, quest: this.quest });
     this.$el.html(content);

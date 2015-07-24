@@ -20,8 +20,8 @@
   <li><%= item.escape('description') %></li>
   <li>
     <% if (Cohabitate.currentUser.escape('is_leader') === "true") { %>
-      <a href="#">Remove Task</a>
-      <a href="#">Edit Task</a>
+      <a class="remove-task" href="#">Remove Task</a>
+      <a class="edit-task" href="#">Edit Task</a>
     <% } %>
   </li>
 </ul>

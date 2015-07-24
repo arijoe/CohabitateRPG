@@ -32,6 +32,8 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
 
     Cohabitate.currentUser.completedTasks().add(task);
     task.save({completer_id: Cohabitate.currentUser.id});
+
+    Cohabitate.currentUser.trigger("updateUser");
   },
 
   render: function () {

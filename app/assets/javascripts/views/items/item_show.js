@@ -5,6 +5,10 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
 
   className: "item group",
 
+  events: {
+    "click .remove-task": "removeTask"
+  },
+
   completeTask: function (event) {
     event.preventDefault();
     if ($(event.target).hasClass('check')) { return; }
@@ -16,6 +20,13 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
     task.save({completer_id: Cohabitate.currentUser.id});
 
     Cohabitate.currentUser.trigger("updateUser");
+  },
+
+  removeTask: function () {
+    debugger
+    this.model.destroy();
+    this.view.remove();
+    this.render();
   },
 
   render: function () {
