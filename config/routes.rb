@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :update, :show, :destroy]
   end
 
+  get "/auth/:provider/callback", to: "api/sessions#omniauth"
+
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
