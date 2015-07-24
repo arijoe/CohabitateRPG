@@ -32,8 +32,8 @@ User.all[0..2].each do |user|
 end
 
 i = Quest.all.first.items.new ({
-  label: "Brush teeth.",
-  description: "Brush those teeth.",
+  label: "Make the bacon pancakes.",
+  description: "First make some bacon and then you put it in the pancakes.",
   completed: false
 })
 
