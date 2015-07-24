@@ -10,7 +10,8 @@
   <input for="Points" type="integer" name="item[points]" value="<%= parseInt(10) %>">
 
   <input type="hidden" name="item[leader_id]" value="<%= Cohabitate.currentUser.id %>">
-  <input type="hidden" name="item[list_id]" value= 
+  <input type="hidden" name="item[list_id]" value="<%= list.id %>">
+  <input type="hidden" name="item[completed]" value="false">
 
   <button>Submit</button>
   <a class="cancel">Cancel</a>

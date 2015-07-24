@@ -17,12 +17,14 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   showForm: function (event) {
-    $(this.$el.find('.new')).remove();
     event.preventDefault();
+    $(this.$el.find('.new')).remove();
+
     var form = new Cohabitate.Views.ItemNew({
       model: new Cohabitate.Models.Item(),
       list: this.list
      });
+
     $(this.$el.find('.items-list')).append($(form.render().$el));
   },
 
@@ -43,6 +45,8 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
         that.list.add(newItem, { merge: true });
       }
     });
+
+    debugger
   },
 
   renderItems: function () {

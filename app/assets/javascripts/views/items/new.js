@@ -11,9 +11,10 @@ Cohabitate.Views.ItemNew = Backbone.View.extend({
 
   render: function () {
     this.$el.html( this.template({
-      item: this.model,
-      list: this.list
-     }) )
+        item: this.model,
+        list: this.list
+      })
+    );
     return this;
   }
 });

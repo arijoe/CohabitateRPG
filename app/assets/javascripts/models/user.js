@@ -2,7 +2,6 @@ Cohabitate.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
   parse: function (response) {
-    console.log(response)
     if (response.quest) {
       this.quest().set(response.quest);
       delete response.quest;
