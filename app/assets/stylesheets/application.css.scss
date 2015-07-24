@@ -48,6 +48,7 @@ button {
   outline: none;
   box-sizing: content-box;
   -webkit-appearance: none;
+  background: rgab(0 0 0 1);
 }
 
 img {
@@ -420,14 +421,17 @@ navbar .logo:active {
 /*GAME-MAIN LIST VIEW*/
 
 .lists {
-  margin: 0 auto;
-  width: calc(100% - 10px);
+  align: center;
+  margin-left: calc(0.1%);
+  width: calc(100%);
 }
 
 .list {
   float: left;
   padding: 10px;
-  margin: 5px 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: calc(1%);
   border: 1px solid #32cd32;
   background: #fff;
   min-width: 45px;
@@ -461,6 +465,10 @@ navbar .logo:active {
   display: block;
   position: relative;
   cursor: pointer;
+}
+
+li.label {
+  margin-right: 24px;
 }
 
 li.label, li.points {
