@@ -579,13 +579,16 @@ div.username:hover {
 
 .thumb-container {
   margin: 0 auto;
+  overflow: hidden;
   background: transparent;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
 }
 
 .thumb-container > img {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #ccc;
+  width: 49px;
+  height: 49px;
 }
 
 /*LEADER INFO*/
