@@ -1,5 +1,5 @@
 Cohabitate.Views.ItemsShow = Backbone.View.extend({
-  template: JST['items/show'],
+  template: JST['items/show_all'],
 
   initialize: function () {
     this.listenTo(this.collection, "sync change add", this.render)
@@ -25,7 +25,7 @@ Cohabitate.Views.ItemsShow = Backbone.View.extend({
 
   completeTask: function (event) {
     event.preventDefault();
-    if ($(event.target).hasClass('check')) { return; };
+    if ($(event.target).hasClass('check')) { return; }
 
     var taskID = $(event.target).attr('data');
     var task = this.collection.get(taskID);

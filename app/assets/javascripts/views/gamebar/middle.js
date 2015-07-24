@@ -7,7 +7,8 @@ Cohabitate.Views.BarMiddle = Backbone.View.extend({
 
   initialize: function (options) {
     this.user = options.user,
-    this.quest = options.quest
+    this.quest = options.quest,
+    this.listenTo(Cohabitate.currentUser, "updateUser", this.updateUser);
   },
 
   // Binary display toggle

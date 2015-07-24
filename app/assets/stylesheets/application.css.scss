@@ -86,7 +86,6 @@ img {
   overflow-y: hidden;
 }
 
-
 body {
   font-family: sans-serif;
   font-weight: 300;
@@ -239,6 +238,13 @@ navbar .logo:active {
   background: rgba(238, 238, 238, 1);
 }
 
+.form > .ouath-link {
+  text-decoration: none;
+  position: relative;
+  margin: 0 auto;
+  background: #32cd32;
+}
+
 /*QUEST CREATE */
 
 .quest-form-modal-backdrop {
@@ -292,8 +298,16 @@ navbar .logo:active {
 }
 
 #picture-container {
-  height: 150px;
+  margin: 0 auto;
   width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#picture-container > img {
+  height: 100%;
+  width: 100%;
 }
 
 .image-full {
@@ -314,14 +328,14 @@ navbar .logo:active {
 /*MIDDLE BAR*/
 
 #game-bar {
-  height: 135px;
+  height: 140px;
   min-width: 650px;
   border: 1px solid #888;
 }
 
 .profile-display {
   float: left;
-  height: 135px;
+  height: 140px;
   min-width: 149px;
   width: calc(15%);
 }
@@ -337,10 +351,20 @@ navbar .logo:active {
   font-weight: 600;
 }
 
+.user-attributes > li > a:hover {
+  color: #32cd32;
+}
+
 #picture-container {
   margin: 0 auto;
-  width: 100px;
-  height: calc(75%);
+  width: 98px;
+  height: 98px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#picture-container > img {
+  width: 100%;
 }
 
 /*BAR-MIDDLE*/
@@ -348,7 +372,7 @@ navbar .logo:active {
 .quest-info {
   position: relative;
   float: left;
-  height: 135px;
+  height: 140px;
   min-width: 348px;
   width: calc(70% - 2px);
   background: #fff;
@@ -375,10 +399,71 @@ navbar .logo:active {
   display: none;
 }
 
+#quest-name {
+  text-align: center;
+  padding-top: 15px;
+  color: #5f9ea0;
+  font-size: 20px;
+  font-weight: 200;
+}
+
 /*USER DETAIL*/
 
 .user-detail {
+  display: relative;
+  margin-left: calc(15%);
+  margin-top: 25px;
+}
 
+.toggle#roomies {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+.toggle#roomies:hover {
+  color: #5f9ea0;
+}
+
+.user-details {
+  width: 100%
+}
+
+#xp {
+  display: block;
+}
+
+#xp > .bar-label {
+  float: left;
+  margin-right: 5px;
+}
+
+#xp > .bar {
+  text-align: right;
+  width: 400px;
+  float: left;
+  border: 1px solid #555;
+}
+
+.bar > .fill {
+  float: left;
+}
+
+.bar > .fill:after {
+  content: "";
+  background: #32cd32;
+  padding-left: 300px;
+  // 40000 * ( user.escape('xp') / (50 + ( user.escape('level') - 1 ) * 5) )
+}
+
+#level {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color:#888;
+  font-style: italic;
 }
 
 /*MEMBERS DETAIL*/
@@ -387,31 +472,54 @@ navbar .logo:active {
 
 }
 
-#quest-name {
+.toggle#user {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+.toggle#user:hover {
+  color: #5f9ea0;
+}
+
+.quest-members-list {
   position: absolute;
   bottom: 15px;
   left: 15px;
 }
 
-#quest-members {
-  float: left;
-  min-width: 149px;
-  width: calc(15%);
-  height: inherit;
-}
-
-#quest-members-list {
-  margin-top: 10px auto;
-  text-align: center;
-}
-
-#quest-members-list > li {
+.quest-members-list > li {
   float: left;
   padding: 5px;
 }
 
-#quest-member:hover {
+.quest-member {
+  margin: 5px 20px;
+}
+
+div.username {
+  color: #555;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+div.username:hover {
   color: #5f9ea0;
+}
+
+.thumb-container {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.thumb-container > img {
+  width: 100%;
 }
 
 /*LEADER INFO*/
@@ -459,6 +567,10 @@ navbar .logo:active {
   padding: 5px;
   margin: 5px 0;
   border: 1px solid #000;
+}
+
+.item .complete-task {
+  background: #ccc;
 }
 
 .item-details {
@@ -526,16 +638,19 @@ a.cancel {
   position: absolute;
   bottom: 0;
   right: 0;
+  font-size: 14px
 }
 
 /*SPLASH PAGE*/
 
 p.info {
+  text-align: center;
+  line-height: 20px;
+  display: block;
+  margin-top: 100px;
   background: #f2ffff;
   height: auto;
-  padding: 25px calc(15% - 20px);
-  position: absolute;
-  top: 400px;
+  padding: 30px calc(30% - 20px);
   font-size: 16px;
   border-top: 1px solid #32cd32;
   border-bottom: 1px solid #32cd32;

@@ -5,10 +5,6 @@ Cohabitate.Views.GamemainShow = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync change", this.render);
   },
 
-  events: {
-    "click": "customEvent"
-  },
-
   addList: function (list) {
     var view = new Cohabitate.Views.ListShow({
       list: list
@@ -31,9 +27,5 @@ Cohabitate.Views.GamemainShow = Backbone.CompositeView.extend({
     this.renderLists();
 
     return this;
-  },
-
-  customEvent: function () {
-    Cohabitate.currentUser.trigger("ari");
   }
 });

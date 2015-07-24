@@ -39,10 +39,12 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
     var that = this;
     var newItem = new Cohabitate.Models.Item();
     var formData = $(this.$el.find('.item-form')).serializeJSON();
+    var view = new Cohabitate.Views.ItemShow({ model: newItem });
 
     newItem.save(formData, {
       success: function () {
-        // that.list.add(newItem, { merge: true });
+        that.removeForm(event);
+        view.render();
       }
     });
   },

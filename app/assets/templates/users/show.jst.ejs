@@ -13,9 +13,10 @@
         <% } %>
       </li>
 
-      <% if ( user.get("is_leader") ) { %>
-        <li id="leader">Quest Leader</li>
-      <% } %>
+      <li class="level-and-leader">Level <%= user.escape('level') %>
+        <% if ( user.get("is_leader") ) { %> |  Quest Leader<% } %>
+      </li>
+
 
       <li id="email">Email: <%= user.escape("email") %>
       <% if (Cohabitate.currentUser.id === user.id) { %>
