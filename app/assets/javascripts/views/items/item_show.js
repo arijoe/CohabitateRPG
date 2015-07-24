@@ -19,7 +19,6 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
   },
 
   render: function () {
-    debugger
     this.$el.attr('data', this.model.id)
     var content = this.template({ item: this.model });
     this.$el.append(content);

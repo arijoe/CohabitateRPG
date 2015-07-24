@@ -94,8 +94,7 @@ class User < ActiveRecord::Base
   end
 
   def xp
-    divisor = 50 + (level - 1) * 5
-    points % divisor
+    points % 50
   end
 
   def self.find_by_credentials(email, password)

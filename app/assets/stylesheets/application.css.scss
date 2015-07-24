@@ -205,6 +205,21 @@ navbar .logo:active {
   width: calc(100% - 30px);
 }
 
+.form > .oauth-link {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 50px;
+  background: #32cd32;
+  color: #000;
+  text-align: center;
+}
+
+.form > .oauth-link:hover {
+  background: red;
+  color: #fff;
+}
+
 .form > input:focus {
   box-shadow: 0 0 5px #32cd32;
   border: 1px solid #32cd32;
@@ -256,11 +271,39 @@ navbar .logo:active {
 }
 
 .quest-form-modal {
+  position: relative;
   background: rgba(255, 255, 255, 1);
   border: 1px solid #5f9ea0;
   margin: 100px auto;
   width: 400px;
 }
+
+.quest-form-modal > p, input, label {
+  margin: 5px 10px;
+}
+
+.quest-form-modal > h2 {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 5px 15px 5px;
+}
+
+.quest-form-modal > button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #5f9ea0;
+}
+
+.quest-form-modal > button:hover {
+  background: #32cd32;
+  color: #fff;
+}
+
+.quest-form-modal > button:active {
+  color: #000
+}
+
 
 /*USER SHOW*/
 
@@ -295,6 +338,30 @@ navbar .logo:active {
 
 #username {
   margin-top: 20px;
+}
+
+.image-form {
+  margin: 10px 20px;
+  padding: 10px;
+  border-top: 1px solid #555;
+}
+
+.image-form > button {
+  position: absolute;
+  right: 15px;
+  bottom: 135px;
+  background: #5f9ea0;
+}
+
+.user-modal {
+  position: relative;
+}
+
+.user-modal-dismiss {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #32cd32;
 }
 
 #picture-container {
@@ -524,7 +591,22 @@ div.username:hover {
 
 /*LEADER INFO*/
 
+.quest-winner {
+  margin: 20px;
+}
 
+.winner-label {
+  font-style: italic;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.current-winner {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #5f9ea0;
+}
 
 /*GAME-MAIN LIST VIEW*/
 

@@ -10,6 +10,18 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
 
   },
 
+  calcWinner: function () {
+    var winner = -1;
+
+    this.quest.members().each(function (member) {
+      if ( winner === -1 || (member.escape('level') >= winner.escape('level') && member.escape('xp') >= winner.escape('xp')) ) {
+        winner = member;
+      }
+    });
+
+    return winner === -1 ? this.user : winner
+  },
+
   renderProfileDisplay: function () {
     var view = new Cohabitate.Views.MiniShow({ model: this.user });
     this.addSubview(".profile-display", view);
@@ -23,12 +35,11 @@ Cohabitate.Views.GamebarShow = Backbone.CompositeView.extend({
     this.addSubview(".quest-info", view);
   },
 
-  renderQuestLeader: function () {
-
-  },
-
   render: function () {
-    var content = this.template({ quest: this.quest });
+    var content = this.template({
+      quest: this.quest,
+      winner: this.calcWinner()
+    });
     this.$el.html(content);
 
     this.renderProfileDisplay();

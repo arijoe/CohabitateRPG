@@ -2,10 +2,13 @@
 
 <container class="quest-info group"></container>
 
-<container class="quest-members group">
-  <ul id="quest-members-list">
-    <% quest.members().each(function (member) { %>
-      <li id="quest-member"><%= member.escape('username') %></li>
-    <% }) %>
+<container class="quest-winner group">
+  <ul class="winner-display">
+
+    <div class="thumb-container">
+      <img class="image-full" src="<%= winner.escape('image_url') %>">
+    </div>
+    <li class="winner-label">Currently in First: </li>
+    <li class="current-winner"><%= winner.escape('username') %></li>
   </ul>
 </container>
