@@ -40,7 +40,7 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
 
   removeTask: function () {
     this.model.destroy();
-    this.view.remove();
+    this.remove();
     this.render();
   },
 
