@@ -8,6 +8,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.list = options.list;
     this.items = options.list.items();
+    this.listenTo(this.list, "sync remove add", this.render);
   },
 
   events: {
@@ -50,7 +51,19 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   renderItems: function () {
-    var view = new Cohabitate.Views.ItemsShow({ collection: this.items });
+    var that = this;
+
+    this.items.each( function (item) {
+      that.addItem(item);
+    });
+  },
+
+  addItem: function (item) {
+    var view = new Cohabitate.Views.ItemShow({
+      collection: this.items,
+      model: item
+    });
+
     this.addSubview(".items-list", view);
   },
 

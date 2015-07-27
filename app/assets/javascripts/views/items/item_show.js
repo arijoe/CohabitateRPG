@@ -6,7 +6,23 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
   className: "item group",
 
   events: {
-    "click .remove-task": "removeTask"
+    "click .attr": "toggleDescription",
+    "click .complete": "completeTask",
+    "click .remove-task": "removeTask",
+    "click .edit-task": "editTask"
+  },
+
+  toggleDescription: function (event) {
+    event.preventDefault();
+
+    var descriptions = this.$el.find('.description')
+
+    descriptions.each( function (idx) {
+      var desc = $(descriptions[idx]);
+      if ( $(event.target).attr('data') === desc.attr('data') ) {
+        desc.hasClass('hidden') ? desc.removeClass('hidden') : desc.addClass('hidden');
+      };
+    });
   },
 
   completeTask: function (event) {
@@ -23,7 +39,6 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
   },
 
   removeTask: function () {
-    debugger
     this.model.destroy();
     this.view.remove();
     this.render();
