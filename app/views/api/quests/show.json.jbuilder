@@ -10,7 +10,6 @@ json.lists @quest.lists do |list|
   json.extract! list, :id, :type, :created_at, :updated_at
 
   json.items list.items do |item|
-    json.extract! item, :id, :label, :description, :duedate,
-      :points, :completed, :completer_id, :created_at, :updated_at
+    json.merge! item.attributes
   end
 end

@@ -21,8 +21,8 @@ class Item < ActiveRecord::Base
     def unique_within_quest
       labels = []
 
-      if list.quest
-        list.quest.items.each do |item|
+      if self.list.quest
+        self.list.quest.items.each do |item|
           next if item = self
           labels << item.label
         end

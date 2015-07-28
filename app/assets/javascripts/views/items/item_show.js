@@ -5,11 +5,18 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
 
   className: "item group",
 
+  initialize: function (options) {
+    this.list = options.list;
+    this.listenTo(this.model, "change", this.render);
+  },
+
   events: {
     "click .attr": "toggleDescription",
     "click .complete": "completeTask",
     "click .remove-task": "removeTask",
-    "click .edit-task": "editTask"
+    "click .edit-task": "editTask",
+    "click .cancel": "cancelEdit",
+    "submit .edit-form": "updateTask"
   },
 
   toggleDescription: function (event) {
@@ -47,13 +54,41 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
 
   editTask: function (event) {
     event.preventDefault();
-
     var form = new Cohabitate.Views.ItemNew({
       model: this.model,
-      list: this.collection
+      list: this.list
     });
 
-    $(this.$el).html($(form.render().$el));
+    this.$el.addClass("item new group");
+    this.$el.html($(form.render().$el.html()));
+    this.$el.find('form').addClass("edit-form");
+  },
+
+  updateTask: function (event) {
+    event.preventDefault();
+    var that = this;
+    var formData = $(this.$el.find('.item-form')).serializeJSON();
+
+    this.model.save(formData, {
+      success: function (response) {
+        that.model.set(response);
+        that.remove();
+        Backbone.history.navigate("", { trigger: true });
+      }
+    });
+  },
+
+  cancelEdit: function (event) {
+    event.preventDefault();
+    $(this.$el.find('.item-form')).remove();
+
+    var view = new Cohabitate.Views.ItemShow({
+      collection: this.collection,
+      model: this.model,
+      list: this.list
+    });
+
+    this.$el.html(view.render().$el.html());
   },
 
   render: function () {

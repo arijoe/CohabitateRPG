@@ -4,4 +4,5 @@ Cohabitate.Models.Item = Backbone.Model.extend({
   isCompleted: function () {
     return !!this.get('completer_id');
   }
+  
 });

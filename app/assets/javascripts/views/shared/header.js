@@ -32,10 +32,10 @@ Cohabitate.Views.Header = Backbone.View.extend({
   swapInfo: function () {
     if ( $('.about').html() === "About" ) {
       $('.about').html('Contact');
-      $('.info').html('Cohabitate RPG was developed for demonstrational purposes only in 2015. If you are interested in more details about the project, I am happy to hear from you at ari dot weitzman at gmail dot com.');
+            $('.info').html("Cohabitate RPG is a live role-playing game for roommates. Inspire yourself and your friends to keep your living space tidy by making a game of it! Pick one person to lead your quest to clean living, and we'll help you through the rest.")
     } else {
       $('.about').html('About');
-      $('.info').html("Cohabitate RPG is a live role-playing game for roommates. Inspire yourself and your friends to keep your living space tidy by making a game of it! Pick one person to lead your quest to clean living, and we'll help you through the rest.")
+      $('.info').html('Cohabitate RPG was developed for demonstrational purposes only in 2015. If you are interested in more details about the project, I am happy to hear from you at ari dot weitzman at gmail dot com.');
     }
   }
 });

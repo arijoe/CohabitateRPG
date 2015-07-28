@@ -8,13 +8,13 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.list = options.list;
     this.items = options.list.items();
-    this.listenTo(this.list, "sync remove add", this.render);
+    this.listenTo(this.list, "sync", this.render);
   },
 
   events: {
     'click .new-item': 'showForm',
     'click .cancel': 'removeForm',
-    'submit form': 'submit'
+    'submit .new-form': 'submit'
   },
 
   showForm: function (event) {
@@ -26,7 +26,8 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
       list: this.list
      });
 
-    $(this.$el.find('.items-list')).append($(form.render().$el));
+    this.$el.find('.items-list').append(form.render().$el);
+    this.$el.find('form').addClass("new-form");
   },
 
   removeForm: function (event) {
@@ -40,12 +41,16 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
     var that = this;
     var newItem = new Cohabitate.Models.Item();
     var formData = $(this.$el.find('.item-form')).serializeJSON();
-    var view = new Cohabitate.Views.ItemShow({ model: newItem });
+    var view = new Cohabitate.Views.ItemShow({
+      list: this.list,
+      collection: this.items,
+      model: newItem
+    });
 
     newItem.save(formData, {
       success: function () {
         that.removeForm(event);
-        that.list.fetch();
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   },
@@ -60,6 +65,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
 
   addItem: function (item) {
     var view = new Cohabitate.Views.ItemShow({
+      list: this.list,
       collection: this.items,
       model: item
     });

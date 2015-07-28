@@ -1,10 +1,6 @@
 Cohabitate.Views.GamemainShow = Backbone.CompositeView.extend({
   template: JST['quests/main_show'],
 
-  initialize: function () {
-    this.listenTo(this.collection, "sync change", this.render);
-  },
-
   addList: function (list) {
     var view = new Cohabitate.Views.ListShow({
       list: list
