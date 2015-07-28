@@ -7,7 +7,7 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.list = options.list;
-    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "change", this.render)
   },
 
   events: {
@@ -67,13 +67,13 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
   updateTask: function (event) {
     event.preventDefault();
     var that = this;
-    var formData = $(this.$el.find('.item-form')).serializeJSON();
+    var formData = this.$el.find('.item-form').serializeJSON();
 
     this.model.save(formData, {
       success: function (response) {
         that.model.set(response);
         that.remove();
-        Backbone.history.navigate("", { trigger: true });
+        that.render();
       }
     });
   },

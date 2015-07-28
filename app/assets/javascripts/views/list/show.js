@@ -19,7 +19,7 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
 
   showForm: function (event) {
     event.preventDefault();
-    $(this.$el.find('.new')).remove();
+    this.$el.find('.new').remove();
 
     var form = new Cohabitate.Views.ItemNew({
       model: new Cohabitate.Models.Item(),
@@ -41,16 +41,11 @@ Cohabitate.Views.ListShow = Backbone.CompositeView.extend({
     var that = this;
     var newItem = new Cohabitate.Models.Item();
     var formData = $(this.$el.find('.item-form')).serializeJSON();
-    var view = new Cohabitate.Views.ItemShow({
-      list: this.list,
-      collection: this.items,
-      model: newItem
-    });
 
     newItem.save(formData, {
       success: function () {
         that.removeForm(event);
-        Backbone.history.navigate("", { trigger: true });
+        that.addItem(newItem);
       }
     });
   },
