@@ -15,7 +15,7 @@ Cohabitate.Views.ItemNew = Backbone.View.extend({
         list: this.list
       })
     );
-    
+
     return this;
   }
 });

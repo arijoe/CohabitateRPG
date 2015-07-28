@@ -38,10 +38,22 @@ Cohabitate.Views.ItemShow = Backbone.View.extend({
     Cohabitate.currentUser.trigger("updateUser");
   },
 
-  removeTask: function () {
+  removeTask: function (event) {
+    event.preventDefault();
     this.model.destroy();
     this.remove();
     this.render();
+  },
+
+  editTask: function (event) {
+    event.preventDefault();
+
+    var form = new Cohabitate.Views.ItemNew({
+      model: this.model,
+      list: this.collection
+    });
+
+    $(this.$el).html($(form.render().$el));
   },
 
   render: function () {
